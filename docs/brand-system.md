@@ -1,67 +1,69 @@
 # Brand system - Triplets Atelier Redesign
 
-## Intencion visual
+## Intención visual
 
-La nueva home busca sentirse editorial, limpia y premium sin copiar la estructura del sitio actual. La referencia principal de marca se mantiene en tres ideas: flores con curaduria, experiencia fisica en Bosque Real y servicios faciles de entender.
+La home busca sentirse limpia, smooth y premium sin copiar la estructura del sitio oficial. El diseño prioriza que el usuario entienda rápido tres ideas: flores premium en Bosque Real, servicios principales claros y contacto inmediato por WhatsApp.
 
-El enfoque visual evita depender todavia de fotografias o logos finales. Por eso se usan placeholders abstractos en CSS: petalos, tallos, bloques tipo collage y tarjetas flotantes. La intencion es dejar una base lista para sustituir esos espacios por imagenes reales cuando existan assets aprobados.
+El sistema visual usa una composición editorial con tarjetas grandes, espacios para imágenes futuras y placeholders creados con CSS. Estos placeholders anticipan dirección visual sin depender todavía de fotografías reales, logos definitivos ni librerías externas.
 
-## Paleta aproximada
+## Paleta oficial aplicada
 
-La paleta se aproxima a la identidad actual de Triplets Atelier observada en su web: fondos claros y calidos, acentos florales suaves, verdes naturales y texto cafe profundo. No es una extraccion exacta de marca; es una aproximacion para este draft conceptual.
+La paleta del proyecto se centraliza en `:root` para mantener consistencia y facilitar ajustes posteriores.
 
-- `--color-cream: #fbf6ee`  
-  Fondo principal calido. Mantiene una sensacion suave y luminosa.
+- `--color-deep-teal: #4b7878`  
+  Color principal de marca para CTAs, links destacados, hover y acentos importantes.
 
-- `--color-warm-white: #fffdf8`  
-  Superficies limpias para tarjetas, formularios y elementos flotantes.
+- `--color-cream: #fffef6`  
+  Fondo principal de la página. Mantiene la home luminosa y cálida.
 
-- `--color-petal: #efd4cc`  
-  Rosa petalo apagado para fondos florales y volumen visual.
+- `--color-mint: #61b6b0`  
+  Acento fresco para microdetalles, pétalos CSS y estados secundarios.
 
-- `--color-blush: #d9a59c`  
-  Rosa mas presente para piezas de collage y acentos secundarios.
+- `--color-forest: #263f29`  
+  Texto principal, títulos y footer. Sustituye el negro puro por un verde profundo más cercano a la identidad floral.
 
-- `--color-clay: #ae6f5b`  
-  Terracota floral para interacciones y detalles de conversion.
+- `--color-stone: #e2dfd3`  
+  Fondo secundario suave para secciones y superficies neutrales.
 
-- `--color-clay-dark: #7d493e`  
-  CTA principal, estados hover y acentos con mas contraste.
+- `--color-pale-green: #bde0c7`  
+  Fondo vegetal claro para cards, highlights y formas visuales.
 
-- `--color-olive: #6b765d`  
-  Verde botanico suave para reforzar frescura y naturaleza.
+- `--color-sand: #dfd5bd`  
+  Fondo cálido complementario para equilibrar los verdes y evitar saturación.
 
-- `--color-moss: #434d3b`  
-  Verde profundo para contraste editorial.
+## Reglas de uso
 
-- `--color-plum: #3a2a26`  
-  Texto principal. Sustituye el negro puro por un tono mas calido.
-
-- `--color-cocoa: #5f4a42`  
-  Texto secundario y metadata.
-
-- `--color-sand: #e9d8c3`  
-  Base neutral para bloques visuales y secciones.
+1. La base debe ser `--color-cream`.
+2. Los textos y títulos deben usar `--color-forest`.
+3. Los botones principales y enlaces destacados deben usar `--color-deep-teal`.
+4. `--color-mint` funciona mejor como acento, no como color dominante.
+5. `--color-stone`, `--color-pale-green` y `--color-sand` se usan en fondos secundarios de manera sutil.
+6. No usar todos los colores al mismo nivel de intensidad dentro de una misma sección.
 
 ## Variables estructurales
 
-- `--font-title` usa Georgia como serif elegante disponible por defecto.
-- `--font-body` usa Arial/Helvetica para mantener legibilidad y cero dependencias externas.
-- `--radius-card: 8px` mantiene tarjetas sobrias y profesionales.
-- `--radius-soft: 28px` queda reservado para formas decorativas, no para tarjetas principales.
-- `--shadow-small` y `--shadow-large` separan tarjetas y collage sin saturar la interfaz.
-- `--container: 1180px` controla el ancho maximo de la home.
-- `--section-padding` permite ajustar ritmo vertical por breakpoint.
+- `--font-title`: Georgia, serif elegante disponible por defecto.
+- `--font-body`: Arial/Helvetica para legibilidad y cero dependencias.
+- `--radius-card: 8px`: tarjetas sobrias y profesionales.
+- `--radius-soft: 26px`: reservado para formas suaves y decorativas.
+- `--shadow-small` y `--shadow-large`: separación visual sin saturar.
+- `--container: 1180px`: ancho máximo de layout.
+- `--section-padding`: ritmo vertical adaptable por breakpoint.
 
-## Decisiones de diseno
+## Decisiones de diseño
 
-1. Header mas profesional: marca a la izquierda, navegacion centrada en desktop y CTA fijo a la derecha.
-2. Hero con funcion de resumen: comunica floristeria premium, Bosque Real, suscripciones, Blossom Bar, atelier fisico y contacto inmediato.
-3. Composicion editorial: el collage visual usa formas CSS para anticipar una direccion fotografica sin bloquear el avance por falta de assets.
-4. Servicios menos genericos: cada tarjeta tiene una atmosfera visual propia y una accion clara.
-5. Mobile-first: la navegacion arranca como panel movil y se convierte en barra centrada a partir de desktop.
-6. Vanilla stack: no se agregan frameworks, librerias ni fuentes externas.
+1. Header sticky con marca, ubicación visible, navegación preparada para páginas futuras y CTA.
+2. Hero con frase fija: “Flores que hacen especial lo cotidiano.”
+3. Primer pantallazo con resumen de Círculo Blossom, Blossom Bar y Atelier/Kiosco.
+4. Servicios como vitrina premium: tres cards grandes con espacio preparado para imagen.
+5. “Experiencias” simplifica sostenibilidad, blog e inspiración floral en una futura sección/página más amigable.
+6. Footer global pensado para repetirse en páginas futuras.
+7. Mobile-first: navegación hamburguesa en móvil, cards apiladas y botones táctiles amplios.
+8. Stack vanilla: HTML, CSS y JavaScript sin frameworks ni dependencias externas.
 
-## Uso futuro
+## TODOs pendientes
 
-Cuando lleguen imagenes reales, se recomienda sustituir gradualmente los placeholders de `.hero-visual` y `.service-visual` por fotografia clara de flores, atelier y eventos. La paleta puede ajustarse contra assets oficiales manteniendo los roles actuales de variables.
+- Confirmar dirección exacta del kiosco en Bosque Real.
+- Confirmar horarios de atención.
+- Sustituir placeholders CSS por imágenes reales aprobadas.
+- Revisar enlaces legales cuando existan páginas finales.
