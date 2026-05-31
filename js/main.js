@@ -2,9 +2,14 @@ const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("#menuToggle");
 const navPanel = document.querySelector("#navPanel");
 const navLinks = document.querySelectorAll(".nav-links a");
-const whatsappButton = document.querySelector("#whatsappButton");
+const dropdownToggles = document.querySelectorAll(".nav-dropdown-toggle");
 
-const whatsappNumber = "525532253448";
+function closeDropdowns() {
+  dropdownToggles.forEach((toggle) => {
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.closest(".has-dropdown")?.classList.remove("is-dropdown-open");
+  });
+}
 
 function setMenuState(isOpen) {
   if (!menuToggle || !navPanel) {
@@ -14,6 +19,10 @@ function setMenuState(isOpen) {
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   navPanel.classList.toggle("is-open", isOpen);
   document.body.classList.toggle("nav-open", isOpen);
+
+  if (!isOpen) {
+    closeDropdowns();
+  }
 }
 
 if (menuToggle && navPanel) {
@@ -22,6 +31,17 @@ if (menuToggle && navPanel) {
     setMenuState(!isOpen);
   });
 }
+
+dropdownToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const dropdown = toggle.closest(".has-dropdown");
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    closeDropdowns();
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    dropdown?.classList.toggle("is-dropdown-open", !isOpen);
+  });
+});
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => setMenuState(false));
@@ -35,19 +55,9 @@ window.addEventListener("scroll", () => {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 });
 
-if (whatsappButton) {
-  whatsappButton.addEventListener("click", () => {
-    const name = document.querySelector("#name")?.value.trim();
-    const service = document.querySelector("#service")?.value;
-    const message = document.querySelector("#message")?.value.trim();
-
-    const text = [
-      "Hola Triplets Atelier, quiero cotizar flores.",
-      name ? `Nombre: ${name}` : "",
-      service ? `Servicio: ${service}` : "",
-      message ? `Mensaje: ${message}` : ""
-    ].filter(Boolean).join("\n");
-
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
-  });
-}
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setMenuState(false);
+    closeDropdowns();
+  }
+});
