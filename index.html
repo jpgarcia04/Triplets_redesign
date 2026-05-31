@@ -4,56 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Rediseño conceptual de Triplets Atelier, florería premium en Bosque Real, CDMX." />
-  <title>Triplets Atelier | Flores en Bosque Real</title>
+  <title>Triplets Atelier | Flores premium en Bosque Real</title>
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" data-header>
     <nav class="navbar container" aria-label="Navegación principal">
-      <a href="#" class="logo" aria-label="Inicio Triplets Atelier">
-        Triplets Atelier
+      <a href="#inicio" class="brand" aria-label="Inicio Triplets Atelier">
+        <span class="brand-mark">TA</span>
+        <span class="brand-copy">
+          Triplets
+          <span>Flower Atelier</span>
+        </span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        ☰
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navPanel">
+        <span></span>
+        <span></span>
       </button>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#como-funciona">Cómo funciona</a></li>
-        <li><a href="#atelier">Atelier</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
+      <div class="nav-panel" id="navPanel">
+        <ul class="nav-links">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#atelier">Atelier</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
 
-      <a href="#contacto" class="nav-cta">Cotizar</a>
+        <a class="nav-cta" href="https://wa.me/525532253448?text=Hola%20Triplets%20Atelier%2C%20quiero%20cotizar%20flores." target="_blank" rel="noopener">
+          Pedir por WhatsApp
+        </a>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Bosque Real · CDMX</p>
-          <h1>Flores que hacen especial lo cotidiano.</h1>
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Floristería premium en Bosque Real</p>
+          <h1>Flores para espacios que se sienten cuidados.</h1>
           <p class="hero-text">
-            Suscripciones florales, bouquets personalizados y experiencias para eventos,
-            diseñadas con una estética limpia, cálida y premium.
+            Triplets Atelier reúne suscripciones florales, Blossom Bar para eventos y un atelier físico para crear ramos con intención, frescura y una estética suave.
           </p>
 
-          <div class="hero-actions">
-            <a href="#servicios" class="btn btn-primary">Ver servicios</a>
-            <a href="#contacto" class="btn btn-secondary">Pedir por WhatsApp</a>
+          <div class="hero-actions" aria-label="Acciones principales">
+            <a href="https://wa.me/525532253448?text=Hola%20Triplets%20Atelier%2C%20quiero%20pedir%20flores." class="btn btn-primary" target="_blank" rel="noopener">
+              Pedir por WhatsApp
+            </a>
+            <a href="#servicios" class="btn btn-secondary">Ver servicios</a>
+          </div>
+
+          <div class="hero-highlights" aria-label="Servicios destacados">
+            <a href="#suscripciones">
+              <span>01</span>
+              Suscripciones florales
+            </a>
+            <a href="#eventos">
+              <span>02</span>
+              Blossom Bar para eventos
+            </a>
+            <a href="#atelier">
+              <span>03</span>
+              Atelier en Bosque Real
+            </a>
           </div>
         </div>
 
-        <div class="hero-card" aria-label="Resumen de servicios">
-          <span class="hero-card-tag">Atelier floral</span>
-          <h2>Flores para casa, oficina y eventos.</h2>
-          <p>
-            Una experiencia floral pensada para quienes buscan detalle, diseño y frescura
-            sin complicarse.
-          </p>
+        <div class="hero-visual" aria-label="Composición visual floral conceptual">
+          <div class="visual-card visual-card-main">
+            <div class="floral-stem stem-one"></div>
+            <div class="floral-stem stem-two"></div>
+            <div class="floral-stem stem-three"></div>
+            <div class="petal petal-one"></div>
+            <div class="petal petal-two"></div>
+            <div class="petal petal-three"></div>
+            <div class="vase"></div>
+          </div>
+
+          <div class="floating-card floating-card-top">
+            <span>Semanal / quincenal</span>
+            <strong>Círculo Blossom</strong>
+          </div>
+
+          <div class="floating-card floating-card-bottom">
+            <span>Eventos con gesto floral</span>
+            <strong>Blossom Bar</strong>
+          </div>
+
+          <div class="atelier-tag">
+            <span></span>
+            Kiosco floral en Bosque Real
+          </div>
         </div>
       </div>
     </section>
@@ -62,108 +105,138 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Servicios principales</p>
-          <h2>Elige cómo quieres vivir la experiencia floral.</h2>
+          <h2>Tres formas de llevar el atelier a tu día.</h2>
+          <p>
+            Una oferta simple de entender desde el primer vistazo: flores recurrentes, experiencias para eventos y un punto físico para elegir en persona.
+          </p>
         </div>
 
-        <div class="cards-grid">
-          <article class="service-card">
-            <span class="card-number">01</span>
-            <h3>Círculo Blossom</h3>
-            <p>
-              Suscripción floral para recibir flores de temporada de forma semanal o quincenal.
-            </p>
-            <a href="#contacto">Quiero suscribirme</a>
+        <div class="service-board">
+          <article class="service-card service-card-large" id="suscripciones">
+            <div class="service-visual subscription-visual" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="service-content">
+              <span class="service-number">01</span>
+              <h3>Círculo Blossom</h3>
+              <p>
+                Flores de temporada para casa u oficina, con frecuencia semanal o quincenal y una curaduría pensada para mantener vivo el espacio.
+              </p>
+              <a href="#contacto">Armar suscripción</a>
+            </div>
+          </article>
+
+          <article class="service-card" id="eventos">
+            <div class="service-visual event-visual" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="service-content">
+              <span class="service-number">02</span>
+              <h3>Blossom Bar</h3>
+              <p>
+                Una barra floral para celebraciones, activaciones y reuniones donde cada invitado se lleva un detalle hecho a su medida.
+              </p>
+              <a href="#contacto">Cotizar evento</a>
+            </div>
           </article>
 
           <article class="service-card">
-            <span class="card-number">02</span>
-            <h3>Blossom Bar</h3>
-            <p>
-              Barra floral para eventos, activaciones y celebraciones especiales.
-            </p>
-            <a href="#contacto">Cotizar evento</a>
-          </article>
-
-          <article class="service-card">
-            <span class="card-number">03</span>
-            <h3>Atelier en Bosque Real</h3>
-            <p>
-              Visita el espacio físico y arma un ramo personalizado con flores seleccionadas.
-            </p>
-            <a href="#atelier">Ver ubicación</a>
+            <div class="service-visual atelier-visual" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="service-content">
+              <span class="service-number">03</span>
+              <h3>Atelier físico</h3>
+              <p>
+                Un espacio en Bosque Real para escoger flores, combinar texturas y salir con un ramo que se sienta personal.
+              </p>
+              <a href="#atelier">Ver atelier</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section process" id="como-funciona">
-      <div class="container process-grid">
-        <div>
-          <p class="eyebrow">Cómo funciona</p>
-          <h2>Una experiencia simple, visual y directa.</h2>
+    <section class="section experience" id="experiencia">
+      <div class="container experience-grid">
+        <div class="experience-copy">
+          <p class="eyebrow">Experiencia Triplets</p>
+          <h2>Diseño floral que baja el ruido visual.</h2>
+          <p>
+            La nueva home propone una navegación más directa, un tono editorial y una experiencia de contacto inmediata para que el usuario entienda qué pedir sin recorrer demasiadas páginas.
+          </p>
         </div>
 
-        <div class="steps">
-          <div class="step">
-            <h3>1. Elige servicio</h3>
-            <p>Suscripción, evento o visita al atelier.</p>
+        <div class="experience-list" aria-label="Principios de experiencia">
+          <div class="experience-item">
+            <span>Curaduría</span>
+            <p>Selección de flores, follajes y materiales con una paleta contenida.</p>
           </div>
-          <div class="step">
-            <h3>2. Cuéntanos qué necesitas</h3>
-            <p>Se puede adaptar por ocasión, estilo, frecuencia o presupuesto.</p>
+          <div class="experience-item">
+            <span>Cercanía</span>
+            <p>Atelier físico como punto de confianza para clientes de Bosque Real.</p>
           </div>
-          <div class="step">
-            <h3>3. Recibe flores con intención</h3>
-            <p>Diseños cuidados, de temporada y con una estética premium.</p>
+          <div class="experience-item">
+            <span>Acción rápida</span>
+            <p>WhatsApp visible desde header, hero y contacto para cotizar sin fricción.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section atelier" id="atelier">
-      <div class="container atelier-box">
-        <div>
-          <p class="eyebrow">Atelier / Kiosco</p>
-          <h2>Un espacio floral en Bosque Real.</h2>
-          <p>
-            La ubicación física debe ser una parte fuerte de la web: da confianza,
-            cercanía y claridad para clientes locales.
-          </p>
+      <div class="container atelier-grid">
+        <div class="atelier-visual-block" aria-hidden="true">
+          <span class="atelier-orb atelier-orb-one"></span>
+          <span class="atelier-orb atelier-orb-two"></span>
+          <span class="atelier-line"></span>
         </div>
 
-        <div class="location-card">
-          <h3>Ubicación</h3>
-          <p>Bosque Real, CDMX / Naucalpan</p>
-          <p class="muted">Confirmar dirección exacta y horarios antes de publicar.</p>
+        <div class="atelier-copy">
+          <p class="eyebrow">Atelier / Kiosco</p>
+          <h2>Un punto floral para visitar, elegir y componer.</h2>
+          <p>
+            La ubicación física deja de ser un dato escondido: se convierte en una razón para confiar, visitar y pedir algo más personal.
+          </p>
+          <div class="atelier-meta">
+            <span>Bosque Real</span>
+            <span>Ramos personalizados</span>
+            <span>Flores frescas</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section contact" id="contacto">
       <div class="container contact-grid">
-        <div>
+        <div class="contact-copy">
           <p class="eyebrow">Contacto</p>
-          <h2>¿Flores para hoy, para tu casa o para un evento?</h2>
+          <h2>Cuéntanos qué flores necesitas y para cuándo.</h2>
           <p>
-            El CTA debe ser directo. Para esta versión inicial, WhatsApp será el canal
-            más claro para pedir información o cotizar.
+            Para esta versión conceptual, WhatsApp funciona como el canal principal de conversión: rápido, claro y cercano.
           </p>
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
           <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" placeholder="Tu nombre" />
+          <input type="text" id="name" name="name" placeholder="Tu nombre" autocomplete="name" />
 
           <label for="service">Servicio</label>
           <select id="service" name="service">
-            <option value="suscripcion">Círculo Blossom</option>
-            <option value="evento">Blossom Bar / Evento</option>
-            <option value="atelier">Atelier / Kiosco</option>
-            <option value="otro">Otro</option>
+            <option value="Círculo Blossom">Círculo Blossom</option>
+            <option value="Blossom Bar / Evento">Blossom Bar / Evento</option>
+            <option value="Atelier / Kiosco">Atelier / Kiosco</option>
+            <option value="Otro">Otro</option>
           </select>
 
           <label for="message">Mensaje</label>
-          <textarea id="message" name="message" rows="4" placeholder="Cuéntanos qué necesitas"></textarea>
+          <textarea id="message" name="message" rows="4" placeholder="Cuéntanos fecha, estilo o presupuesto"></textarea>
 
           <button type="button" class="btn btn-primary" id="whatsappButton">
             Enviar por WhatsApp
@@ -176,7 +249,7 @@
   <footer class="site-footer">
     <div class="container footer-content">
       <p>Triplets Atelier Redesign · Proyecto académico/conceptual</p>
-      <p>HTML · CSS · JavaScript</p>
+      <p>HTML · CSS · JavaScript vanilla</p>
     </div>
   </footer>
 
