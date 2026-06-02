@@ -12,7 +12,9 @@
   <header class="site-header" data-header>
     <nav class="navbar container" aria-label="Navegación principal">
       <a href="./index.html#inicio" class="brand" aria-label="Inicio Triplets Atelier">
-        <span class="brand-mark">TA</span>
+        <span class="brand-logo-wrap">
+          <img src="images/LOGO-D.png" alt="Triplets Atelier" class="brand-logo" />
+        </span>
         <span class="brand-copy">
           <strong>Triplets</strong>
           <span>Flower Atelier</span>
@@ -27,18 +29,11 @@
       <div class="nav-panel" id="navPanel">
         <ul class="nav-links">
           <li><a href="./index.html#inicio">Inicio</a></li>
-          <li class="has-dropdown">
-            <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="servicesDropdown">
-              Servicios
-            </button>
-            <ul class="dropdown-menu" id="servicesDropdown">
-              <li><a href="./circulo-blossom.html">Círculo Blossom</a></li>
-              <li><a href="./blossom-bar.html">Blossom Bar</a></li>
-              <li><a href="./atelier.html">Atelier / Kiosco</a></li>
-            </ul>
-          </li>
+          <li><a class="active" aria-current="page" href="./circulo-blossom.html">Círculo Blossom</a></li>
+          <li><a href="./blossom-bar.html">Blossom Bar</a></li>
+          <li><a href="./atelier-kiosco.html">Atelier / Kiosco</a></li>
           <li><a href="./quienes-somos.html">Quiénes somos</a></li>
-          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./blog.html">Blog / Experiencias</a></li>
           <li><a href="./index.html#contacto">Contacto</a></li>
         </ul>
 
@@ -53,20 +48,18 @@
     <section class="page-hero" aria-labelledby="service-title">
       <div class="container page-hero-grid">
         <div class="page-hero-copy">
-          <p class="eyebrow">Suscripción floral</p>
+          <p class="eyebrow section-label">Suscripción floral premium</p>
           <h1 id="service-title">Círculo Blossom</h1>
-          <p class="hero-text">Flores para tu casa, semana a semana.</p>
+          <p class="hero-text">
+            Flores para tu casa, semana a semana. Una forma sencilla de mantener tus espacios vivos, frescos y cuidados.
+          </p>
           <a class="btn btn-primary" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20suscribirme%20al%20C%C3%ADrculo%20Blossom" target="_blank" rel="noopener">
             Quiero suscribirme
           </a>
         </div>
 
-        <div class="page-visual-card">
-          <div class="service-image service-image-subscription service-hero-visual" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <div class="hero-media visual-card">
+          <img src="images/WhatsApp-Image-2026-02-18-at-10.07.24-AM.jpeg" alt="Bouquet premium para suscripción floral" />
         </div>
       </div>
     </section>
@@ -74,7 +67,7 @@
     <section class="section how-it-works" aria-labelledby="steps-title">
       <div class="container process-grid">
         <div>
-          <p class="eyebrow">Cómo funciona</p>
+          <p class="eyebrow section-label">Cómo funciona</p>
           <h2 id="steps-title">Una rutina floral sin complicarte.</h2>
         </div>
 
@@ -82,49 +75,82 @@
           <div class="process-step">
             <span>01</span>
             <h3>Elige tu frecuencia</h3>
-            <p>Semanal o quincenal, según el ritmo de tu casa.</p>
+            <p>Semanal o quincenal, según el ritmo de tu casa u oficina.</p>
           </div>
           <div class="process-step">
             <span>02</span>
-            <h3>Recibimos tu pedido</h3>
-            <p>Coordinamos estilo, zona, entrega y preferencias.</p>
+            <h3>Coordinamos tu pedido</h3>
+            <p>Definimos estilo, zona, entrega y preferencias de temporada.</p>
           </div>
           <div class="process-step">
             <span>03</span>
             <h3>Tus flores llegan</h3>
-            <p>Recibe flores frescas con una curaduría lista para disfrutar.</p>
+            <p>Recibe arreglos frescos con 30 tallos de alta calidad en cada entrega.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="frequency-title">
+    <section class="section pricing-section" aria-labelledby="plans-title">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Frecuencias</p>
-          <h2 id="frequency-title">Elige cada cuánto quieres recibir flores.</h2>
+          <p class="eyebrow section-label">Planes</p>
+          <h2 id="plans-title">Elige el ritmo de flores que quieres vivir.</h2>
+          <p>
+            Ambos planes incluyen IVA y envío* con cargo recurrente. La diferencia está en la frecuencia.
+          </p>
         </div>
 
-        <div class="option-grid two-options">
-          <article class="option-card">
-            <span>Semanal</span>
-            <h3>Flores cada semana</h3>
-            <p>Ideal para casas, recepción, oficina o espacios que quieres mantener siempre vivos.</p>
-            <strong>Desde consultar</strong>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <div class="pricing-media">
+              <img src="images/bouquet.png" alt="Bouquet para plan semanal de Círculo Blossom" />
+            </div>
+            <div class="pricing-content">
+              <span class="service-kicker">Flores cada semana</span>
+              <h3>Plan semanal</h3>
+              <strong class="price">$1,100</strong>
+              <p>Costo semanal con cargo recurrente. Incluye IVA y envío*.</p>
+              <ul class="feature-list">
+                <li>1 arreglo por semana</li>
+                <li>30 tallos de alta calidad</li>
+                <li>Curaduría floral de temporada</li>
+              </ul>
+              <a class="btn btn-primary" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20contratar%20el%20Plan%20semanal%20del%20C%C3%ADrculo%20Blossom" target="_blank" rel="noopener">
+                Contratar plan semanal
+              </a>
+            </div>
           </article>
-          <article class="option-card">
-            <span>Quincenal</span>
-            <h3>Flores cada dos semanas</h3>
-            <p>Una opción flexible para renovar el ambiente con una frecuencia más ligera.</p>
-            <strong>Desde consultar</strong>
+
+          <article class="pricing-card featured">
+            <div class="pricing-media">
+              <img src="images/arreglo2.png" alt="Arreglo floral para plan quincenal de Círculo Blossom" />
+            </div>
+            <div class="pricing-content">
+              <span class="service-kicker">Flores cada dos semanas</span>
+              <h3>Plan quincenal</h3>
+              <strong class="price">$1,290</strong>
+              <p>Costo quincenal con cargo recurrente. Incluye IVA y envío*.</p>
+              <ul class="feature-list">
+                <li>1 arreglo cada dos semanas</li>
+                <li>30 tallos de alta calidad</li>
+                <li>Entrega cómoda y recurrente</li>
+              </ul>
+              <a class="btn btn-primary" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20contratar%20el%20Plan%20quincenal%20del%20C%C3%ADrculo%20Blossom" target="_blank" rel="noopener">
+                Contratar plan quincenal
+              </a>
+            </div>
           </article>
         </div>
+
+        <p class="fine-print">*Sujeto a zona de entrega y disponibilidad de temporada.</p>
       </div>
     </section>
 
     <section class="final-cta" aria-labelledby="cta-title">
       <div class="container final-cta-inner">
-        <h2 id="cta-title">¿Lista para recibir flores cada semana?</h2>
+        <p class="section-label inverse">Círculo Blossom</p>
+        <h2 id="cta-title">¿Lista para recibir flores de forma recurrente?</h2>
         <a class="btn btn-light" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20suscribirme%20al%20C%C3%ADrculo%20Blossom" target="_blank" rel="noopener">
           Escribir por WhatsApp
         </a>
@@ -136,7 +162,9 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="./index.html#inicio" class="brand footer-logo" aria-label="Inicio Triplets Atelier">
-          <span class="brand-mark">TA</span>
+          <span class="brand-logo-wrap">
+            <img src="images/LOGO-D.png" alt="Triplets Atelier" class="brand-logo" />
+          </span>
           <span class="brand-copy">
             <strong>Triplets</strong>
             <span>Flower Atelier</span>
@@ -148,9 +176,9 @@
       <div class="footer-column">
         <h3>Enlaces</h3>
         <a href="./index.html#inicio">Inicio</a>
-        <a href="./index.html#servicios">Servicios</a>
-        <a href="./atelier.html">Atelier</a>
-        <a href="./blog.html">Blog</a>
+        <a href="./circulo-blossom.html">Círculo Blossom</a>
+        <a href="./blossom-bar.html">Blossom Bar</a>
+        <a href="./atelier-kiosco.html">Atelier / Kiosco</a>
       </div>
 
       <div class="footer-column">
@@ -162,16 +190,19 @@
       </div>
 
       <div class="footer-column">
-        <h3>Redes</h3>
-        <a href="https://www.instagram.com/triplets___flowers/" target="_blank" rel="noopener">Instagram</a>
+        <h3>Información</h3>
         <a href="./quienes-somos.html">Quiénes somos</a>
-        <a href="./index.html#contacto">Contacto</a>
+        <a href="./blog.html">Blog / Experiencias</a>
+        <a href="#">Cookies</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Política de privacidad</a>
+        <a href="https://www.instagram.com/triplets___flowers/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
 
     <div class="container footer-bottom">
       <p>© 2026 Triplets Atelier. Proyecto conceptual de rediseño.</p>
-      <p>Privacidad · Términos · Cookies</p>
+      <p>Bosque Real · CDMX</p>
     </div>
   </footer>
 
