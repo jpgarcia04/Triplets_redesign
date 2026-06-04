@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Atelier y kiosco físico de Triplets Atelier en Bosque Real." />
-  <title>Atelier & Kiosco | Triplets Atelier</title>
+  <meta name="description" content="Atelier & Kiosco de Triplets Atelier en Bosque Real. Ven, elige flores frescas de temporada y arma tu propio ramo. Ubicación, horarios y mapa." />
+  <title>Atelier &amp; Kiosco | Bosque Real · Triplets Atelier</title>
 
+  <link rel="icon" href="images/cropped-icon.png" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
   <header class="site-header" data-header>
     <nav class="navbar container" aria-label="Navegación principal">
-      <a href="./index.html#inicio" class="brand" aria-label="Inicio Triplets Atelier">
+      <a href="./index.html" class="brand" aria-label="Inicio · Triplets Atelier">
         <span class="brand-logo-wrap">
-          <img src="images/LOGO-D.png" alt="Triplets Atelier" class="brand-logo" />
+          <img src="images/cropped-icon.png" alt="" class="brand-logo" />
         </span>
         <span class="brand-copy">
           <strong>Triplets</strong>
@@ -28,50 +31,70 @@
 
       <div class="nav-panel" id="navPanel">
         <ul class="nav-links">
-          <li><a href="./index.html#inicio">Inicio</a></li>
-          <li><a href="./circulo-blossom.html">Círculo Blossom</a></li>
-          <li><a href="./blossom-bar.html">Blossom Bar</a></li>
-          <li><a class="active" aria-current="page" href="./atelier-kiosco.html">Atelier / Kiosco</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li class="has-dropdown is-active">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">Servicios</button>
+            <ul class="dropdown-menu">
+              <li><a href="./circulo-blossom.html">Círculo Blossom</a></li>
+              <li><a href="./blossom-bar.html">Blossom Bar</a></li>
+              <li><a class="active" aria-current="page" href="./atelier-kiosco.html">Atelier / Kiosco</a></li>
+            </ul>
+          </li>
           <li><a href="./quienes-somos.html">Quiénes somos</a></li>
-          <li><a href="./blog.html">Blog / Experiencias</a></li>
+          <li><a href="./sostenibilidad.html">Sostenibilidad</a></li>
+          <li><a href="./blog.html">Blog</a></li>
           <li><a href="./index.html#contacto">Contacto</a></li>
         </ul>
 
-        <a class="nav-cta" href="https://wa.me/525532253448" target="_blank" rel="noopener">
+        <a class="nav-cta" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20tengo%20una%20pregunta%20sobre%20el%20Atelier" target="_blank" rel="noopener">
           Cotizar por WhatsApp
         </a>
       </div>
     </nav>
   </header>
 
-  <main class="service-page atelier-page">
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#servicios">Servicios</a></li>
+        <li aria-current="page">Atelier / Kiosco</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="service-page atelier-page" id="main">
     <section class="page-hero" aria-labelledby="service-title">
       <div class="container page-hero-grid">
-        <div class="page-hero-copy">
-          <p class="eyebrow section-label">Bosque Real</p>
-          <h1 id="service-title">Atelier & Kiosco</h1>
+        <div class="page-hero-copy reveal">
+          <p class="eyebrow section-label">Kiosco físico en Bosque Real</p>
+          <h1 id="service-title">Atelier &amp; Kiosco</h1>
           <p class="hero-text">
-            Un espacio para elegir flores con calma en Bosque Real. Ven, combina texturas y arma un ramo a tu estilo.
+            Nuestro espacio físico en Bosque Real. Ven a elegir flores frescas de temporada,
+            combina texturas y arma un ramo a tu estilo con la asesoría de nuestro equipo.
           </p>
-          <a class="btn btn-primary" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20tengo%20una%20pregunta%20sobre%20el%20Atelier" target="_blank" rel="noopener">
-            Preguntar por WhatsApp
-          </a>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#ubicacion">Cómo llegar</a>
+            <a class="btn btn-ghost" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20tengo%20una%20pregunta%20sobre%20el%20Atelier" target="_blank" rel="noopener">
+              Preguntar por WhatsApp
+            </a>
+          </div>
         </div>
 
-        <div class="hero-media visual-card">
-          <img src="images/conos-20.jpg.jpeg" alt="Bouquet físico de Triplets Atelier en cono floral" />
-        </div>
+        <figure class="hero-media visual-card reveal">
+          <img src="images/conos-20.jpg.jpeg" alt="Cono floral de Triplets con sello de marca, listo para llevar del kiosco" />
+        </figure>
       </div>
     </section>
 
     <section class="section" aria-labelledby="find-title">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <p class="eyebrow section-label">Qué encontrarás</p>
           <h2 id="find-title">Un kiosco para componer flores en persona.</h2>
         </div>
 
-        <div class="service-detail-grid">
+        <div class="service-detail-grid reveal-stagger">
           <article class="service-detail-card">
             <span>01</span>
             <h3>Flores frescas de temporada</h3>
@@ -80,12 +103,12 @@
           <article class="service-detail-card">
             <span>02</span>
             <h3>Follajes y materiales</h3>
-            <p>Texturas, envolturas y detalles para terminar cada ramo con intención.</p>
+            <p>Texturas, envolturas y listones de marca para terminar cada ramo con intención.</p>
           </article>
           <article class="service-detail-card">
             <span>03</span>
             <h3>Ramos personalizados</h3>
-            <p>Arma tu propio ramo al momento con guía y asesoría personalizada.</p>
+            <p>Arma tu propio ramo al momento con guía y asesoría de nuestro equipo.</p>
           </article>
           <article class="service-detail-card">
             <span>04</span>
@@ -96,34 +119,64 @@
       </div>
     </section>
 
-    <section class="section how-it-works" aria-labelledby="location-title">
-      <div class="container map-layout">
-        <div class="location-card premium-location">
+    <!-- ARMA TU RAMO -->
+    <section class="section how-it-works" aria-labelledby="build-title">
+      <div class="container locale-grid">
+        <div class="locale-copy reveal">
+          <p class="eyebrow section-label">Vívelo en persona</p>
+          <h2 id="build-title">Elige, combina y arma tu ramo.</h2>
+          <p>
+            En el kiosco eliges tallo por tallo. Te ayudamos a combinar color y textura,
+            lo envolvemos con nuestro empaque de marca y te lo llevas listo para regalar — o para ti.
+          </p>
+          <div class="locale-meta">
+            <span>Asesoría incluida</span>
+            <span>Empaque de marca</span>
+            <span>Flores por tallo</span>
+          </div>
+        </div>
+        <figure class="locale-figure reveal">
+          <img src="images/conos-15.jpg.jpeg" alt="Mesa del atelier con conos florales y cubetas de flores de temporada para armar ramos" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- UBICACIÓN + MAPA -->
+    <section class="section" id="ubicacion" aria-labelledby="location-title">
+      <div class="container">
+        <div class="section-heading reveal">
           <p class="eyebrow section-label">Ubicación y horarios</p>
           <h2 id="location-title">Visítanos en Bosque Real.</h2>
-          <p><strong>Bosque Real, Huixquilucan / Naucalpan</strong></p>
-          <p>Av. Vista Real 16-MZ 001, Bosque Real, 52774 Naucalpan de Juárez, Méx.</p>
-          <p>Lun–Sáb 9:00–19:00</p>
-          <a class="btn btn-primary" href="https://www.google.com/maps?q=Av.%20Vista%20Real%2016-MZ%20001%2C%20Bosque%20Real%2C%2052774%20Naucalpan%20de%20Ju%C3%A1rez%2C%20M%C3%A9x." target="_blank" rel="noopener">
-            Cómo llegar
-          </a>
         </div>
 
-        <div class="map-card">
-          <iframe
-            title="Ubicación de Triplets Atelier en Bosque Real"
-            src="https://www.google.com/maps?q=Av.%20Vista%20Real%2016-MZ%20001%2C%20Bosque%20Real%2C%2052774%20Naucalpan%20de%20Ju%C3%A1rez%2C%20M%C3%A9x.&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="map-layout">
+          <div class="location-card premium-location reveal">
+            <h3>Triplets Flower Atelier</h3>
+            <p class="location-line"><strong>Dirección</strong><br />Av. Vista Real 16-MZ 001, Bosque Real,<br />52774 Naucalpan de Juárez, Méx.</p>
+            <p class="location-line"><strong>Horario</strong><br />Lunes a sábado, 9:00–19:00</p>
+            <p class="location-line"><strong>Contacto</strong><br />WhatsApp 55 3225 3448</p>
+            <a class="btn btn-primary" href="https://www.google.com/maps?q=Av.%20Vista%20Real%2016-MZ%20001%2C%20Bosque%20Real%2C%2052774%20Naucalpan%20de%20Ju%C3%A1rez%2C%20M%C3%A9x." target="_blank" rel="noopener">
+              Cómo llegar
+            </a>
+          </div>
+
+          <div class="map-frame reveal">
+            <iframe
+              title="Ubicación de Triplets Atelier en Bosque Real"
+              src="https://www.google.com/maps?q=Av.%20Vista%20Real%2016-MZ%20001%2C%20Bosque%20Real%2C%2052774%20Naucalpan%20de%20Ju%C3%A1rez%2C%20M%C3%A9x.&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="final-cta" aria-labelledby="cta-title">
-      <div class="container final-cta-inner">
+      <div class="container final-cta-inner reveal">
         <p class="section-label inverse">Atelier / Kiosco</p>
-        <h2 id="cta-title">¿Quieres visitar o preguntar por flores disponibles?</h2>
+        <h2 id="cta-title">¿Quieres pasar o preguntar por flores disponibles?</h2>
+        <p class="cta-sub">Escríbenos y te contamos qué hay fresco hoy en el kiosco.</p>
         <a class="btn btn-light" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20tengo%20una%20pregunta%20sobre%20el%20Atelier" target="_blank" rel="noopener">
           Escribir por WhatsApp
         </a>
@@ -134,9 +187,9 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="./index.html#inicio" class="brand footer-logo" aria-label="Inicio Triplets Atelier">
+        <a href="./index.html" class="brand footer-logo" aria-label="Inicio · Triplets Atelier">
           <span class="brand-logo-wrap">
-            <img src="images/LOGO-D.png" alt="Triplets Atelier" class="brand-logo" />
+            <img src="images/cropped-icon.png" alt="" class="brand-logo" />
           </span>
           <span class="brand-copy">
             <strong>Triplets</strong>
@@ -144,38 +197,48 @@
           </span>
         </a>
         <p>Flores premium, suscripciones y experiencias florales en Bosque Real, CDMX.</p>
+        <p class="footer-tagline">Flores que hacen especial lo cotidiano.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/triplets___flowers/" target="_blank" rel="noopener" aria-label="Instagram de Triplets Atelier">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
+          </a>
+          <a href="https://wa.me/525532253448" target="_blank" rel="noopener" aria-label="WhatsApp de Triplets Atelier">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.42-8.31 8.42zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="footer-column">
-        <h3>Enlaces</h3>
-        <a href="./index.html#inicio">Inicio</a>
+        <h3>Servicios</h3>
         <a href="./circulo-blossom.html">Círculo Blossom</a>
         <a href="./blossom-bar.html">Blossom Bar</a>
         <a href="./atelier-kiosco.html">Atelier / Kiosco</a>
       </div>
 
       <div class="footer-column">
-        <h3>Contacto</h3>
-        <a href="https://wa.me/525532253448" target="_blank" rel="noopener">WhatsApp: 55 3225 3448</a>
-        <a href="mailto:ayuda@tripletsatelier.com">ayuda@tripletsatelier.com</a>
-        <span>Bosque Real, CDMX</span>
-        <span>Lun–Sáb 9:00–19:00</span>
+        <h3>Marca</h3>
+        <a href="./quienes-somos.html">Quiénes somos</a>
+        <a href="./sostenibilidad.html">Sostenibilidad</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./index.html#contacto">Contacto</a>
       </div>
 
       <div class="footer-column">
-        <h3>Información</h3>
-        <a href="./quienes-somos.html">Quiénes somos</a>
-        <a href="./blog.html">Blog / Experiencias</a>
-        <a href="#">Cookies</a>
-        <a href="#">Términos y Condiciones</a>
-        <a href="#">Política de privacidad</a>
-        <a href="https://www.instagram.com/triplets___flowers/" target="_blank" rel="noopener">Instagram</a>
+        <h3>Contacto</h3>
+        <a class="footer-contact-row" href="https://wa.me/525532253448" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">✆</span> 55 3225 3448</a>
+        <a class="footer-contact-row" href="mailto:ayuda@tripletsatelier.com"><span class="ic" aria-hidden="true">✉</span> ayuda@tripletsatelier.com</a>
+        <span class="footer-contact-row"><span class="ic" aria-hidden="true">⌖</span> Av. Vista Real 16, Bosque Real</span>
+        <span class="footer-contact-row"><span class="ic" aria-hidden="true">◷</span> Lun–Sáb 9:00–19:00</span>
       </div>
     </div>
 
     <div class="container footer-bottom">
-      <p>© 2026 Triplets Atelier. Proyecto conceptual de rediseño.</p>
-      <p>Bosque Real · CDMX</p>
+      <div class="footer-legal-links">
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Cookies</a>
+      </div>
+      <p>© <span data-year>2026</span> Triplets Atelier · Proyecto conceptual de rediseño · Bosque Real, CDMX</p>
     </div>
   </footer>
 
