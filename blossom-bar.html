@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Blossom Bar de Triplets Atelier, barra floral interactiva para eventos." />
-  <title>Blossom Bar | Triplets Atelier</title>
+  <meta name="description" content="Blossom Bar — la barra floral interactiva de Triplets Atelier para eventos. Tus invitados eligen, combinan y arman su propio mini bouquet." />
+  <title>Blossom Bar | Barra floral para eventos · Triplets Atelier</title>
 
+  <link rel="icon" href="images/cropped-icon.png" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
   <header class="site-header" data-header>
     <nav class="navbar container" aria-label="Navegación principal">
-      <a href="./index.html#inicio" class="brand" aria-label="Inicio Triplets Atelier">
+      <a href="./index.html" class="brand" aria-label="Inicio · Triplets Atelier">
         <span class="brand-logo-wrap">
-          <img src="images/LOGO-D.png" alt="Triplets Atelier" class="brand-logo" />
+          <img src="images/cropped-icon.png" alt="" class="brand-logo" />
         </span>
         <span class="brand-copy">
           <strong>Triplets</strong>
@@ -28,110 +31,171 @@
 
       <div class="nav-panel" id="navPanel">
         <ul class="nav-links">
-          <li><a href="./index.html#inicio">Inicio</a></li>
-          <li><a href="./circulo-blossom.html">Círculo Blossom</a></li>
-          <li><a class="active" aria-current="page" href="./blossom-bar.html">Blossom Bar</a></li>
-          <li><a href="./atelier-kiosco.html">Atelier / Kiosco</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li class="has-dropdown is-active">
+            <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-haspopup="true">Servicios</button>
+            <ul class="dropdown-menu">
+              <li><a href="./circulo-blossom.html">Círculo Blossom</a></li>
+              <li><a class="active" aria-current="page" href="./blossom-bar.html">Blossom Bar</a></li>
+              <li><a href="./atelier-kiosco.html">Atelier / Kiosco</a></li>
+            </ul>
+          </li>
           <li><a href="./quienes-somos.html">Quiénes somos</a></li>
-          <li><a href="./blog.html">Blog / Experiencias</a></li>
+          <li><a href="./sostenibilidad.html">Sostenibilidad</a></li>
+          <li><a href="./blog.html">Blog</a></li>
           <li><a href="./index.html#contacto">Contacto</a></li>
         </ul>
 
-        <a class="nav-cta" href="https://wa.me/525532253448" target="_blank" rel="noopener">
+        <a class="nav-cta" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20cotizar%20un%20Blossom%20Bar%20para%20mi%20evento" target="_blank" rel="noopener">
           Cotizar por WhatsApp
         </a>
       </div>
     </nav>
   </header>
 
-  <main class="service-page event-page">
-    <section class="page-hero event-hero" aria-labelledby="service-title">
+  <nav class="breadcrumb" aria-label="Ruta de navegación">
+    <div class="container">
+      <ol>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#servicios">Servicios</a></li>
+        <li aria-current="page">Blossom Bar</li>
+      </ol>
+    </div>
+  </nav>
+
+  <main class="service-page event-page" id="main">
+    <section class="page-hero" aria-labelledby="service-title">
       <div class="container page-hero-grid">
-        <div class="page-hero-copy">
+        <div class="page-hero-copy reveal">
           <p class="eyebrow section-label">Experiencia floral para eventos</p>
           <h1 id="service-title">Blossom Bar</h1>
           <p class="hero-text">
-            Una barra floral interactiva donde tus invitados eligen flores, follajes y materiales para armar su propio mini bouquet.
+            Una barra floral interactiva donde tus invitados eligen flores, follajes y materiales
+            para armar su propio mini bouquet y llevárselo a casa. Una actividad sensorial que se vuelve el alma del evento.
           </p>
-          <a class="btn btn-primary" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20cotizar%20un%20Blossom%20Bar%20para%20mi%20evento" target="_blank" rel="noopener">
-            Cotizar mi evento
-          </a>
-        </div>
-
-        <div class="hero-media visual-card event-media">
-          <img src="images/evento3.jpg.jpeg" alt="Ambiente de evento con flores" />
-          <div class="media-floating-card">
-            <span>Actividad sensorial</span>
-            <strong>Flores que se viven</strong>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20cotizar%20un%20Blossom%20Bar%20para%20mi%20evento" target="_blank" rel="noopener">
+              Cotizar mi evento
+            </a>
+            <a class="btn btn-ghost" href="#como-funciona">Cómo funciona</a>
           </div>
         </div>
+
+        <figure class="hero-media visual-card reveal">
+          <img src="images/conos-15.jpg.jpeg" alt="Mesa con conos florales y cubetas de flores listas para armar bouquets en un evento" />
+        </figure>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="experience-title">
+    <!-- QUÉ ES -->
+    <section class="section" aria-labelledby="what-title">
+      <div class="container barwhat-grid">
+        <div class="reveal">
+          <p class="eyebrow section-label">Qué es Blossom Bar</p>
+          <h2 id="what-title">Una barra de flores montada en tu evento.</h2>
+          <p>
+            Llevamos a tu evento una estación floral completa: cubetas con flores de temporada, follajes,
+            papeles, listones y nuestro equipo para guiar la experiencia. No es decoración estática:
+            es una actividad donde cada invitado se vuelve florista por un momento.
+          </p>
+          <div class="locale-meta">
+            <span>Montaje y materiales incluidos</span>
+            <span>Equipo Triplets en sitio</span>
+            <span>Cada invitado se lleva su ramo</span>
+          </div>
+        </div>
+        <figure class="barwhat-media reveal">
+          <img src="images/flower-bar.png" alt="Carrito de la barra floral Blossom Bar de Triplets con arreglos y pizarra de marca" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA / QUÉ VIVEN LOS INVITADOS -->
+    <section class="section how-it-works" id="como-funciona" aria-labelledby="experience-title">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow section-label">Cómo se vive</p>
-          <h2 id="experience-title">Una experiencia floral con ritmo, elección y sorpresa.</h2>
+        <div class="section-heading reveal">
+          <p class="eyebrow section-label">Qué viven tus invitados</p>
+          <h2 id="experience-title">Elegir, combinar y crear: una experiencia con ritmo.</h2>
         </div>
 
-        <div class="experience-flow">
+        <div class="experience-flow reveal-stagger">
           <article>
             <span>01</span>
             <h3>Llegan a la barra</h3>
-            <p>Los invitados encuentran flores, follajes y materiales listos para elegir.</p>
+            <p>Encuentran flores, follajes y materiales listos para elegir, con guía de nuestro equipo.</p>
           </article>
           <article>
             <span>02</span>
             <h3>Combinan texturas</h3>
-            <p>Seleccionan colores, formas y detalles para personalizar su mini bouquet.</p>
+            <p>Seleccionan colores, formas y detalles para personalizar su propio mini bouquet.</p>
           </article>
           <article>
             <span>03</span>
             <h3>Arman su ramo</h3>
-            <p>La actividad se vuelve lúdica, sensorial y fácil de disfrutar.</p>
+            <p>La actividad se vuelve lúdica, sensorial y fácil de disfrutar para cualquier edad.</p>
           </article>
           <article>
             <span>04</span>
             <h3>Se llevan un recuerdo</h3>
-            <p>Cada persona sale con un detalle floral hecho por ella misma.</p>
+            <p>Cada persona sale con un detalle floral hecho por ella misma. El mejor souvenir.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- BANNER CINEMATOGRÁFICO -->
+    <section class="section" aria-labelledby="atmos-title">
+      <div class="container">
+        <figure class="cinematic-banner reveal">
+          <img src="images/evento3.jpg.jpeg" alt="Mesa larga de evento con centro floral y copas bajo luz cálida" />
+          <figcaption class="cinematic-content">
+            <p class="eyebrow section-label">La atmósfera</p>
+            <h2 id="atmos-title">Flores que se vuelven el centro de la celebración.</h2>
+            <p>Color, aroma y movimiento. El Blossom Bar convierte un rincón del evento en el punto de encuentro favorito de tus invitados.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
     <section class="section gallery-section" aria-labelledby="gallery-title">
       <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow section-label">Galería conceptual</p>
-          <h2 id="gallery-title">Montaje, materiales y atmósfera.</h2>
+        <div class="section-heading reveal">
+          <p class="eyebrow section-label">Galería</p>
+          <h2 id="gallery-title">Montaje, materiales y detalles.</h2>
         </div>
 
-        <div class="image-grid">
-          <figure class="image-tile wide">
-            <img src="images/flower-bar.png" alt="Barra floral Blossom Bar" />
-            <figcaption>Barra floral interactiva</figcaption>
+        <div class="gallery-mosaic reveal">
+          <figure class="m-feature">
+            <img src="images/IMG_3801.jpeg" alt="Arreglo floral premium con anémonas y eucalipto" />
+            <figcaption>Detalle floral</figcaption>
           </figure>
-          <figure class="image-tile">
-            <img src="images/conos-15.jpg.jpeg" alt="Flores y conos preparados para evento" />
-            <figcaption>Materiales listos para elegir</figcaption>
+          <figure class="m-square">
+            <img src="images/conos-20.jpg.jpeg" alt="Cono floral de Triplets con sello de marca" />
+            <figcaption>Empaque de marca</figcaption>
           </figure>
-          <figure class="image-tile">
-            <img src="images/evento3.jpg.jpeg" alt="Evento con arreglos florales" />
-            <figcaption>Ambiente de celebración</figcaption>
+          <figure class="m-square">
+            <img src="images/tulipanes.jpg.jpeg" alt="Campo de tulipanes de colores" />
+            <figcaption>Flores de temporada</figcaption>
+          </figure>
+          <figure class="m-square">
+            <img src="images/WhatsApp-Image-2026-02-18-at-10.07.24-AM.jpeg" alt="Ramo de rosas en papel kraft con listón de marca" />
+            <figcaption>Bouquets para llevar</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section how-it-works" aria-labelledby="events-title">
+    <!-- IDEAL PARA -->
+    <section class="section" aria-labelledby="events-title">
       <div class="container split-section">
-        <div>
+        <div class="reveal">
           <p class="eyebrow section-label">Ideal para</p>
           <h2 id="events-title">Eventos donde quieres que la gente participe.</h2>
+          <p>Adaptamos el tamaño de la barra y la selección floral al estilo y número de invitados de tu evento.</p>
         </div>
 
-        <div class="chips event-chips">
+        <div class="chips event-chips reveal-stagger">
           <span>Bodas</span>
           <span>Corporativos</span>
           <span>Cumpleaños</span>
@@ -143,9 +207,10 @@
     </section>
 
     <section class="final-cta" aria-labelledby="cta-title">
-      <div class="container final-cta-inner">
+      <div class="container final-cta-inner reveal">
         <p class="section-label inverse">Blossom Bar</p>
         <h2 id="cta-title">Hagamos que tu evento se sienta inolvidable.</h2>
+        <p class="cta-sub">Cuéntanos la fecha, el lugar y el número de invitados y te enviamos una propuesta.</p>
         <a class="btn btn-light" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20cotizar%20un%20Blossom%20Bar%20para%20mi%20evento" target="_blank" rel="noopener">
           Cotizar por WhatsApp
         </a>
@@ -156,9 +221,9 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="./index.html#inicio" class="brand footer-logo" aria-label="Inicio Triplets Atelier">
+        <a href="./index.html" class="brand footer-logo" aria-label="Inicio · Triplets Atelier">
           <span class="brand-logo-wrap">
-            <img src="images/LOGO-D.png" alt="Triplets Atelier" class="brand-logo" />
+            <img src="images/cropped-icon.png" alt="" class="brand-logo" />
           </span>
           <span class="brand-copy">
             <strong>Triplets</strong>
@@ -166,38 +231,48 @@
           </span>
         </a>
         <p>Flores premium, suscripciones y experiencias florales en Bosque Real, CDMX.</p>
+        <p class="footer-tagline">Flores que hacen especial lo cotidiano.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/triplets___flowers/" target="_blank" rel="noopener" aria-label="Instagram de Triplets Atelier">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>
+          </a>
+          <a href="https://wa.me/525532253448" target="_blank" rel="noopener" aria-label="WhatsApp de Triplets Atelier">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.42-8.31 8.42zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+          </a>
+        </div>
       </div>
 
       <div class="footer-column">
-        <h3>Enlaces</h3>
-        <a href="./index.html#inicio">Inicio</a>
+        <h3>Servicios</h3>
         <a href="./circulo-blossom.html">Círculo Blossom</a>
         <a href="./blossom-bar.html">Blossom Bar</a>
         <a href="./atelier-kiosco.html">Atelier / Kiosco</a>
       </div>
 
       <div class="footer-column">
-        <h3>Contacto</h3>
-        <a href="https://wa.me/525532253448" target="_blank" rel="noopener">WhatsApp: 55 3225 3448</a>
-        <a href="mailto:ayuda@tripletsatelier.com">ayuda@tripletsatelier.com</a>
-        <span>Bosque Real, CDMX</span>
-        <span>Lun–Sáb 9:00–19:00</span>
+        <h3>Marca</h3>
+        <a href="./quienes-somos.html">Quiénes somos</a>
+        <a href="./sostenibilidad.html">Sostenibilidad</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./index.html#contacto">Contacto</a>
       </div>
 
       <div class="footer-column">
-        <h3>Información</h3>
-        <a href="./quienes-somos.html">Quiénes somos</a>
-        <a href="./blog.html">Blog / Experiencias</a>
-        <a href="#">Cookies</a>
-        <a href="#">Términos y Condiciones</a>
-        <a href="#">Política de privacidad</a>
-        <a href="https://www.instagram.com/triplets___flowers/" target="_blank" rel="noopener">Instagram</a>
+        <h3>Contacto</h3>
+        <a class="footer-contact-row" href="https://wa.me/525532253448" target="_blank" rel="noopener"><span class="ic" aria-hidden="true">✆</span> 55 3225 3448</a>
+        <a class="footer-contact-row" href="mailto:ayuda@tripletsatelier.com"><span class="ic" aria-hidden="true">✉</span> ayuda@tripletsatelier.com</a>
+        <span class="footer-contact-row"><span class="ic" aria-hidden="true">⌖</span> Av. Vista Real 16, Bosque Real</span>
+        <span class="footer-contact-row"><span class="ic" aria-hidden="true">◷</span> Lun–Sáb 9:00–19:00</span>
       </div>
     </div>
 
     <div class="container footer-bottom">
-      <p>© 2026 Triplets Atelier. Proyecto conceptual de rediseño.</p>
-      <p>Bosque Real · CDMX</p>
+      <div class="footer-legal-links">
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Cookies</a>
+      </div>
+      <p>© <span data-year>2026</span> Triplets Atelier · Proyecto conceptual de rediseño · Bosque Real, CDMX</p>
     </div>
   </footer>
 

@@ -1,24 +1,47 @@
-# Image inventory - Triplets Atelier Redesign
+# Inventario de imágenes — Triplets Atelier Redesign
 
-| Archivo | Ruta | Uso | Motivo | Estado |
+Actualizado tras el rediseño v2. Todas las imágenes viven en `images/`.
+Regla general aplicada: **fotos** → `object-fit: cover` con `object-position` cuidada y `aspect-ratio` en la caja; **renders/productos con fondo blanco** → `object-fit: contain` sobre panel claro (nunca estirados a cover).
+
+## Marca / logotipo
+
+| Archivo | Dimensiones | Uso | Dónde | Estado |
 |---|---|---|---|---|
-| `LOGO-D.png` | `images/LOGO-D.png` | Navbar y footer global | Logo real de Triplets Atelier; reemplaza placeholder `TA`. | Usado |
-| `WhatsApp-Image-2026-02-18-at-10.07.24-AM.jpeg` | `images/WhatsApp-Image-2026-02-18-at-10.07.24-AM.jpeg` | Card de Círculo Blossom en home y hero de `circulo-blossom.html` | Bouquet/arreglo con empaque de marca; comunica suscripción floral premium. | Usado |
-| `bouquet.png` | `images/bouquet.png` | Plan semanal en `circulo-blossom.html` | Bouquet claro y aislado; funciona para plan recurrente. | Usado |
-| `arreglo2.png` | `images/arreglo2.png` | Plan quincenal en `circulo-blossom.html` | Arreglo con empaque Triplets; refuerza entrega recurrente. | Usado |
-| `flower-bar.png` | `images/flower-bar.png` | Card de Blossom Bar en home y galería de `blossom-bar.html` | Visual de barra floral; corresponde al concepto de evento interactivo. | Usado |
-| `evento3.jpg.jpeg` | `images/evento3.jpg.jpeg` | Hero y galería de `blossom-bar.html` | Ambiente de evento con flores; aporta contexto, magia y experiencia. | Usado |
-| `conos-15.jpg.jpeg` | `images/conos-15.jpg.jpeg` | Galería de `blossom-bar.html` | Materiales y flores listos para una experiencia de armado. | Usado |
-| `conos-20.jpg.jpeg` | `images/conos-20.jpg.jpeg` | Card de Atelier en home y hero de `atelier-kiosco.html` | Cono/bouquet físico con marca; comunica visita y producto tangible. | Usado |
-| `clau.png` | `images/clau.png` | Card de Claudia en `quienes-somos.html` | Foto directa de Claudia. | Usado |
-| `cris.png` | `images/cris.png` | Card de Cristina en `quienes-somos.html` | Foto directa de Cristina. | Usado |
-| `WhatsApp-Image-2026-04-17-at-2.01.13-PM.jpeg` | `images/WhatsApp-Image-2026-04-17-at-2.01.13-PM.jpeg` | Hero de `quienes-somos.html` | Foto de ambas fundadoras con bouquets; ideal para historia de marca. | Usado |
-| `tulipanes.jpg.jpeg` | `images/tulipanes.jpg.jpeg` | Sin uso | Imagen floral genérica; no conecta con un servicio específico por ahora. | Pendiente |
-| `fond.png` | `images/fond.png` | Sin uso | Ilustración decorativa; puede servir para fondos, pero no era necesaria en esta iteración. | Pendiente |
-| `IMG_4765.JPG.jpeg` | `images/IMG_4765.JPG.jpeg` | Sin uso | Imagen de logo/ilustración; útil como apoyo gráfico si se necesita una sección institucional. | Pendiente |
-| `IMG_3801.jpeg` | `images/IMG_3801.jpeg` | Sin uso | No se identificó con suficiente certeza para asignarla a una sección. | Dudoso |
-| `ChatGPT-Image-Apr-14-2026-04_15_35-PM.jpg.jpeg` | `images/ChatGPT-Image-Apr-14-2026-04_15_35-PM.jpg.jpeg` | Sin uso | Parece imagen generada; no se usa hasta confirmar intención y derechos. | Dudoso |
-| `f1.png` | `images/f1.png` | Sin uso | No se identificó con suficiente certeza para asignarla. | Dudoso |
-| `flor-movil.png` | `images/flor-movil.png` | Sin uso | Asset floral pequeño; posible apoyo mobile/decorativo futuro. | Pendiente |
-| `icon.png` | `images/icon.png` | Sin uso | Ícono/asset auxiliar; no sustituye el logo principal. | Pendiente |
-| `cropped-icon.png` | `images/cropped-icon.png` | Sin uso | Ícono recortado; no sustituye el logo principal. | Pendiente |
+| `cropped-icon.png` | 512×512 | Marca aislada (3 capullos), legible en tamaño pequeño | Navbar, footer y favicon de **todas** las páginas | Usado |
+| `IMG_4765.JPG.jpeg` | 1552×1600 | Logotipo completo con wordmark | Home → "momento de marca" (`.brand-strip`) | Usado |
+| `icon.png` | 500×481 | Variante de la marca aislada | Respaldo de `cropped-icon` | Pendiente |
+| `LOGO-D.png` | 400×400 | Logo completo cuadrado | Respaldo / favicon alterno (ya no se mete a presión en el círculo de la navbar) | Pendiente |
+
+## Fotografía en uso
+
+| Archivo | Dimensiones | Ratio | Uso | Dónde | Estado |
+|---|---|---|---|---|---|
+| `WhatsApp-Image-2026-02-18-at-10.07.24-AM.jpeg` | 1066×1600 | 0.67 vert | Hero principal (kraft + rosas + listón de marca) | Home hero; galería Blossom Bar | Usado |
+| `IMG_3801.jpeg` | 1125×1396 | 0.81 vert | Bouquet premium en casa (anémonas, eucalipto) | Home card Círculo Blossom; hero Círculo Blossom; galería Blossom Bar (feature) | **Usado** (reasignada: estaba "dudoso") |
+| `conos-20.jpg.jpeg` | 900×1350 | 0.67 vert | Cono kraft con sello de marca | Home hero (sub) y card Atelier; hero Atelier; galería Blossom Bar | Usado |
+| `conos-15.jpg.jpeg` | 900×1350 | 0.67 vert | Mesa con conos y cubetas (armado) | Home card Blossom Bar; hero Blossom Bar; "arma tu ramo" Atelier | Usado |
+| `WhatsApp-Image-2026-04-17-at-2.01.13-PM.jpeg` | 1280×1023 | 1.25 horiz | Las dos fundadoras con bouquets | Hero Quiénes somos (`object-position: 50% 30%`); banda Bosque Real en Home | Usado |
+| `clau.png` | 289×275 | ~1.0 | Retrato Claudia | Quiénes somos → tarjeta fundadora **circular** (`cover`, center-top) | Usado |
+| `cris.png` | 289×275 | ~1.0 | Retrato Cristina | Quiénes somos → tarjeta fundadora **circular** (`cover`, center-top) | Usado |
+| `arreglo2.png` | 400×536 | 0.75 | Bouquet kraft de marca (fondo blanco) | Plan de 30 tallos + `producto.html` (30) → **`contain`** sobre panel stone | Usado |
+| `bouquet.png` | 300×300 | 1.0 | Bouquet mixto (fondo blanco) | Plan de 15 tallos + `producto.html` (15) → **`contain`** sobre panel stone | Usado |
+| `flower-bar.png` | 400×310 | 1.29 | Render del carrito/barra de marca | Blossom Bar → "Qué es" → **`contain`** sobre panel claro | **Corregida** (antes estirada en una caja `cover` alta) |
+| `evento3.jpg.jpeg` | 2500×612 | 4.08 horiz | Mesa de evento, centro floral, luz cálida | Blossom Bar → **banner cinematográfico ancho** (`cover`, overlay verde) | **Corregida** (antes recortada a un sliver en caja alta) |
+| `tulipanes.jpg.jpeg` | 946×606 | 1.56 horiz | Campo de tulipanes (flores de temporada) | Galería Blossom Bar | **Usado** (reasignada: estaba pendiente) |
+| `f1.png` | 800×405 | 1.98 | Line-art floral casi blanco | Sostenibilidad → watermark decorativo sutil | **Usado** (reasignada) |
+| `flor-movil.png` | 700×626 | 1.12 | Flor line-art clara | Blog → adorno en `post-cover` (vía CSS) | **Usado** (reasignada) |
+
+## Sin uso / a revisar
+
+| Archivo | Dimensiones | Motivo | Estado |
+|---|---|---|---|
+| `fond.png` | 2500×989 | Line-art floral sobre **fondo negro**; no encaja en la paleta crema. Posible banda oscura futura. | Pendiente |
+| `ChatGPT-Image-Apr-14-2026-04_15_35-PM.jpg.jpeg` | 1086×1448 | Bouquet sobre mármol, estéticamente excelente, pero parece generada por IA: derechos/origen por confirmar antes de publicarla. | Dudoso |
+
+## Notas de corrección (problemas detectados y solución)
+
+1. **`evento3` (panorámica 2500×612)** se mostraba en cajas altas con `cover` → solo se veía una franja vertical. Ahora se usa en un **banner ancho** (`aspect-ratio` ~21/8 en desktop) donde su proporción natural luce completa, con overlay verde y texto encima.
+2. **`flower-bar` (400×310, baja resolución)** se estiraba a una caja `cover` grande → se veía pixelada/cortada. Ahora va **`contain`** sobre un panel claro: se ve completa, nítida y como lo que es (un render de catálogo).
+3. **Retratos `clau`/`cris`** ahora en contenedor **circular** con `object-fit: cover` y `object-position: center top`, más un *spotlight* radial detrás. Sin estiramiento.
+4. **Productos con fondo blanco** (`bouquet`, `arreglo2`) van siempre en `contain` con sombra suave, no en `cover`.
+5. El **logo** ya no se mete a presión dentro del círculo de 50px de la navbar (el wordmark quedaba ilegible). La navbar usa la **marca aislada** `cropped-icon.png`; el logotipo completo se reserva para el "momento de marca" de la Home.

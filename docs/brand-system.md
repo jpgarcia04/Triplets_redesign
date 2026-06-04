@@ -61,9 +61,27 @@ La paleta del proyecto se centraliza en `:root` para mantener consistencia y fac
 7. Mobile-first: navegación hamburguesa en móvil, cards apiladas y botones táctiles amplios.
 8. Stack vanilla: HTML, CSS y JavaScript sin frameworks ni dependencias externas.
 
+## Actualización v2 (rediseño premium)
+
+La capa v2 (`/* V2 — PREMIUM REFINEMENT LAYER */` en `styles.css`) eleva la experiencia sin cambiar la paleta:
+
+- **Navegación reestructurada**: `Home · Servicios ▾ (Círculo Blossom / Blossom Bar / Atelier-Kiosco) · Quiénes somos · Sostenibilidad · Blog · Contacto` + CTA WhatsApp. Sticky, dropdown por hover en desktop (≥1180px) y por clic en móvil/tablet (hamburguesa). El menú "Servicios" se marca activo (`.has-dropdown.is-active`) dentro de cualquier servicio, y cada página interna lleva **breadcrumb** (`.breadcrumb`).
+- **Hero con foto real** (`.home-hero`): composición editorial (imagen principal + imagen secundaria superpuesta + chip flotante + stats). Sustituye el hero de formas CSS.
+- **Reveal por scroll** (`.reveal`, `.reveal-stagger`): animación de entrada suave manejada en `main.js` **sin** depender de IntersectionObserver y respetando `prefers-reduced-motion`. El CSS solo oculta cuando hay JS (`.js .reveal`), así sin JS todo se ve.
+- **Imágenes con intención**: tokens `--radius-media`, `aspect-ratio` por caja y reglas `cover`/`contain` según el tipo de imagen (ver `image-inventory.md`).
+- **Componentes nuevos**: `.path-card` (3 servicios), `.plan-card` + `.plan-freq` (planes 15/30), `.product-detail` (detalle dinámico), `.cinematic-banner`, `.barwhat-media`, `.gallery-mosaic`, `.founder-portrait` (retratos circulares con spotlight), `.value-card`/`.post-card`, footer enriquecido.
+
+### Tokens añadidos en `:root`
+`--radius-media: 18px`, `--radius-pill`, `--ease-out`, `--shadow-float`, `--shadow-glow`, `--color-overlay-forest`, `--maxw-prose`.
+
+### Páginas
+`index.html`, `circulo-blossom.html`, `producto.html` (detalle dinámico por `?plan=`), `blossom-bar.html`, `atelier-kiosco.html` (con mapa embebido grande), `quienes-somos.html`, `sostenibilidad.html`, `blog.html`. `atelier.html` queda como redirección a `atelier-kiosco.html`.
+
 ## TODOs pendientes
 
-- Confirmar dirección exacta del kiosco en Bosque Real.
-- Confirmar horarios de atención.
-- Sustituir placeholders CSS por imágenes reales aprobadas.
-- Revisar enlaces legales cuando existan páginas finales.
+- Confirmar/recortar fotos reales para los planes de Círculo Blossom (hoy `bouquet.png` y `arreglo2.png`, fondo blanco, en `contain`).
+- Confirmar derechos de `ChatGPT-Image-*` (origen IA) antes de usarla.
+- Conectar los botones de plan a un flujo de pago/contratación real si se desea (hoy llevan a `producto.html` y a WhatsApp).
+- Redactar páginas legales reales (Términos, Privacidad, Cookies) — hoy son placeholders `#`.
+- Ampliar Blog/Sostenibilidad con contenido real cuando exista.
+- Sustituir `fond.png` si se decide usar una banda decorativa oscura.
