@@ -239,6 +239,106 @@ function renderProduct() {
 
 renderProduct();
 
+/* ---------- Formulario de contacto detallado ---------- */
+
+const contactForm = document.querySelector("#contactForm");
+
+if (contactForm) {
+  const formSummary = contactForm.querySelector("#contactFormError");
+  const requiredFields = {
+    nombre: "Escribe tu nombre completo.",
+    telefono: "Escribe un WhatsApp o teléfono de contacto.",
+    servicio: "Selecciona un servicio de interés.",
+    mensaje: "Cuéntanos un poco más para poder ayudarte.",
+  };
+
+  const getValue = (formData, fieldName) => String(formData.get(fieldName) || "").trim();
+
+  const setFieldError = (fieldName, message = "") => {
+    const field = contactForm.elements[fieldName];
+    const error = contactForm.querySelector(`[data-error-for="${fieldName}"]`);
+    const fieldWrapper = field?.closest(".form-field");
+
+    if (!field || !error) return;
+
+    field.setAttribute("aria-invalid", message ? "true" : "false");
+    fieldWrapper?.classList.toggle("is-invalid", Boolean(message));
+    error.textContent = message;
+    error.hidden = !message;
+  };
+
+  const clearSummary = () => {
+    if (!formSummary) return;
+    formSummary.textContent = "";
+    formSummary.hidden = true;
+  };
+
+  Object.keys(requiredFields).forEach((fieldName) => {
+    const field = contactForm.elements[fieldName];
+    if (!field) return;
+
+    const eventName = field.tagName === "SELECT" ? "change" : "input";
+    field.addEventListener(eventName, () => {
+      if (String(field.value || "").trim()) setFieldError(fieldName);
+      clearSummary();
+    });
+  });
+
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const data = {
+      nombre: getValue(formData, "nombre"),
+      telefono: getValue(formData, "telefono"),
+      correo: getValue(formData, "correo"),
+      servicio: getValue(formData, "servicio"),
+      fecha: getValue(formData, "fecha"),
+      zona: getValue(formData, "zona"),
+      presupuesto: getValue(formData, "presupuesto"),
+      mensaje: getValue(formData, "mensaje"),
+    };
+
+    let firstInvalidField = null;
+
+    Object.entries(requiredFields).forEach(([fieldName, message]) => {
+      const hasValue = Boolean(data[fieldName]);
+      setFieldError(fieldName, hasValue ? "" : message);
+
+      if (!hasValue && !firstInvalidField) {
+        firstInvalidField = contactForm.elements[fieldName];
+      }
+    });
+
+    if (firstInvalidField) {
+      if (formSummary) {
+        formSummary.textContent = "Revisa los campos marcados antes de generar tu mensaje de WhatsApp.";
+        formSummary.hidden = false;
+      }
+      firstInvalidField.focus();
+      return;
+    }
+
+    const optional = (value) => value || "No especificado";
+    const whatsappMessage = [
+      "Hola Triplets, vengo desde la página web.",
+      "",
+      `Nombre: ${data.nombre}`,
+      `WhatsApp: ${data.telefono}`,
+      `Correo: ${optional(data.correo)}`,
+      `Servicio de interés: ${data.servicio}`,
+      `Fecha tentativa: ${optional(data.fecha)}`,
+      `Zona / ubicación: ${optional(data.zona)}`,
+      `Presupuesto aproximado: ${optional(data.presupuesto)}`,
+      "",
+      "Mensaje:",
+      data.mensaje,
+    ].join("\n");
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener");
+  });
+}
+
 /* ---------- Año dinámico en el footer ---------- */
 
 document.querySelectorAll("[data-year]").forEach((el) => {
