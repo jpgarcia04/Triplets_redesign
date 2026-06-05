@@ -358,3 +358,94 @@ if (contactForm) {
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = String(new Date().getFullYear());
 });
+
+/* ---------- Modales del blog ---------- */
+// Artículos completos en <dialog>. Sin JS, el <noscript> de blog.html los muestra
+// en línea, así que el contenido nunca queda inaccesible.
+
+const blogModals = document.querySelectorAll(".blog-modal");
+
+if (blogModals.length) {
+  const supportsDialog =
+    typeof HTMLDialogElement === "function" &&
+    typeof document.createElement("dialog").showModal === "function";
+
+  let lastTrigger = null;
+
+  const unlockBody = () => document.body.classList.remove("modal-open");
+
+  const restoreFocus = () => {
+    const trigger = lastTrigger;
+    lastTrigger = null;
+    if (trigger && typeof trigger.focus === "function") trigger.focus();
+  };
+
+  const openModal = (id, trigger) => {
+    const dialog = document.getElementById(id);
+    if (!dialog) return;
+    lastTrigger = trigger || null;
+    document.body.classList.add("modal-open");
+
+    if (supportsDialog) {
+      if (!dialog.open) dialog.showModal();
+    } else {
+      // Respaldo para navegadores sin <dialog>: lo mostramos como overlay simple.
+      dialog.setAttribute("open", "");
+    }
+
+    const inner = dialog.querySelector(".blog-modal-inner");
+    if (inner) inner.scrollTop = 0;
+    dialog.querySelector("[data-article-close]")?.focus();
+  };
+
+  const closeModal = (dialog) => {
+    if (!dialog) return;
+    if (supportsDialog) {
+      if (dialog.open) dialog.close(); // dispara el evento "close" (limpieza)
+    } else {
+      dialog.removeAttribute("open");
+      unlockBody();
+      restoreFocus();
+    }
+  };
+
+  document.querySelectorAll("[data-article-open]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      openModal(btn.getAttribute("data-article-open"), btn);
+    });
+  });
+
+  blogModals.forEach((dialog) => {
+    // Botón de cerrar (X)
+    dialog
+      .querySelector("[data-article-close]")
+      ?.addEventListener("click", () => closeModal(dialog));
+
+    // Clic fuera del recuadro (sobre el backdrop) cierra el modal.
+    dialog.addEventListener("click", (event) => {
+      const box = dialog.getBoundingClientRect();
+      const inside =
+        event.clientX >= box.left &&
+        event.clientX <= box.right &&
+        event.clientY >= box.top &&
+        event.clientY <= box.bottom;
+      if (!inside) closeModal(dialog);
+    });
+
+    // Escape y método nativo close() (el <dialog> ya cierra con Escape):
+    // centralizamos aquí la limpieza de scroll y foco.
+    dialog.addEventListener("close", () => {
+      unlockBody();
+      restoreFocus();
+    });
+  });
+
+  // Respaldo de Escape para navegadores sin soporte de <dialog>.
+  if (!supportsDialog) {
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      const openDialog = document.querySelector(".blog-modal[open]");
+      if (openDialog) closeModal(openDialog);
+    });
+  }
+}

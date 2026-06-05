@@ -23,6 +23,17 @@
   <link rel="icon" href="images/cropped-icon.png" />
   <link rel="apple-touch-icon" href="images/cropped-icon.png" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <noscript>
+    <!-- Sin JavaScript los modales no se pueden abrir: mostramos los artículos completos en línea. -->
+    <style>
+      .blog-modal { display: block; position: static; width: auto; max-width: 760px; max-height: none; margin: 28px auto 0; }
+      .blog-modal::backdrop { display: none; }
+      .blog-modal-inner { max-height: none; overflow: visible; }
+      .blog-modal-close,
+      .blog-article-link { display: none; }
+    </style>
+  </noscript>
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -86,47 +97,157 @@
       </div>
     </section>
 
-    <section class="section" aria-label="Artículos del blog" style="padding-top:0;">
+    <section class="section blog-articles" aria-label="Artículos del blog" style="padding-top:0;">
       <div class="container">
-        <div class="post-grid reveal-stagger">
-          <article class="post-card">
-            <div class="post-cover post-cover-1">
-              <span>Cuidado floral</span>
+        <div class="blog-article-grid reveal-stagger">
+          <article class="blog-article-card">
+            <div class="blog-article-media">
+              <img src="images/IMG_3801.jpeg" alt="Arreglo de anémonas y eucalipto sobre una mesa de casa" loading="lazy" />
+              <span class="blog-article-cat">Cuidados florales</span>
             </div>
-            <div class="post-body">
-              <h3>Cómo hacer que tus flores duren más</h3>
-              <p>Agua limpia, cortes en diagonal y el lugar correcto en casa. Pequeños gestos que alargan la vida de tu ramo.</p>
-              <span class="post-tag">Guía breve</span>
-
-            </div>
-          </article>
-
-          <article class="post-card">
-            <div class="post-cover post-cover-2">
-              <span>Flores con historia</span>
-            </div>
-            <div class="post-body">
-              <h3>El significado detrás de cada flor</h3>
-              <p>Desde las anémonas hasta las hortensias: lo que tradicionalmente comunica cada flor que elegimos.</p>
-              <span class="post-tag">Guía breve</span>
-
+            <div class="blog-article-body">
+              <p class="blog-article-byline">Cristina Gómez · 23 ene 2026</p>
+              <h2>Errores más comunes y cómo evitarlos</h2>
+              <p class="blog-article-excerpt">Cuidar flores en casa no suele fallar por falta de interés, sino por pequeños malentendidos.</p>
+              <button class="blog-article-link" type="button" data-article-open="article-errores" aria-haspopup="dialog">
+                Leer artículo <span aria-hidden="true">→</span>
+              </button>
             </div>
           </article>
 
-          <article class="post-card">
-            <div class="post-cover post-cover-3">
-              <span>Calma cultivada</span>
+          <article class="blog-article-card">
+            <div class="blog-article-media">
+              <img src="images/WhatsApp-Image-2026-02-18-at-10.07.24-AM.jpeg" alt="Ramo de rosas en papel kraft con listón de marca Triplets" loading="lazy" />
+              <span class="blog-article-cat">La calma cultivada</span>
             </div>
-            <div class="post-body">
-              <h3>Flores y bienestar: un ritual de calma</h3>
-              <p>Arreglar flores como pausa consciente. Por qué rodearte de naturaleza viva mejora tu día.</p>
-              <span class="post-tag">Guía breve</span>
+            <div class="blog-article-body">
+              <p class="blog-article-byline">Cristina Gómez · 23 ene 2026</p>
+              <h2>El valor de lo efímero</h2>
+              <p class="blog-article-excerpt">A mirar con más atención, a cuidar sin aferrarse, a agradecer lo que existe.</p>
+              <button class="blog-article-link" type="button" data-article-open="article-efimero" aria-haspopup="dialog">
+                Leer artículo <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
 
+          <article class="blog-article-card">
+            <div class="blog-article-media">
+              <img src="images/tulipanes.jpg.jpeg" alt="Campo de tulipanes de colores" loading="lazy" />
+              <span class="blog-article-cat">Flores con historia</span>
+            </div>
+            <div class="blog-article-body">
+              <p class="blog-article-byline">Cristina Gómez · 23 ene 2026</p>
+              <h2>La vez que los tulipanes se convirtieron en dinero</h2>
+              <p class="blog-article-excerpt">¿Sabías que los tulipanes provocaron una de las primeras burbujas económicas?</p>
+              <button class="blog-article-link" type="button" data-article-open="article-tulipanes" aria-haspopup="dialog">
+                Leer artículo <span aria-hidden="true">→</span>
+              </button>
             </div>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- Artículos completos: se abren en modal con JS; sin JS, el <noscript> del head los muestra en línea. -->
+    <dialog class="blog-modal" id="article-errores" aria-labelledby="article-errores-title">
+      <div class="blog-modal-inner">
+        <button class="blog-modal-close" type="button" data-article-close aria-label="Cerrar artículo">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="blog-modal-meta">
+          <span class="blog-tag">Cuidados florales</span>
+          <span class="blog-byline">Cristina Gómez · 23 ene 2026</span>
+        </div>
+        <h2 class="blog-modal-title" id="article-errores-title">Errores más comunes y cómo evitarlos</h2>
+        <figure class="blog-modal-figure">
+          <img src="images/IMG_3801.jpeg" alt="Arreglo de anémonas y eucalipto sobre una mesa de casa" loading="lazy" />
+        </figure>
+        <div class="blog-modal-content">
+          <p>Cuidar flores en casa no suele fallar por falta de interés, sino por pequeños malentendidos. Muchas veces creemos que necesitan más de lo que realmente piden. Tocarlas constantemente, moverlas de lugar sin observar o intentar “revivirlas” con demasiadas acciones termina agotándolas antes de tiempo. El cuidado cotidiano funciona mejor cuando es sencillo y consistente, no cuando se convierte en una tarea.</p>
+          <p>Otro error frecuente es pensar que cualquier espacio es adecuado mientras se vea bonito. Las flores son sensibles al calor, a las corrientes de aire y al sol directo, incluso cuando no lo notamos de inmediato. Un ramo colocado cerca de una ventana muy luminosa o de una fuente de calor puede verse bien por unas horas y deteriorarse rápidamente. Elegir un lugar fresco, con luz indirecta y estable suele marcar una diferencia clara sin necesidad de hacer nada más.</p>
+          <h3>El agua</h3>
+          <p>También es común olvidar que el agua es parte viva del arreglo. Dejarla varios días sin cambiarla, no limpiar el florero o no recortar los tallos hace que las flores absorban menos de lo que necesitan. Un gesto simple —agua limpia y un corte ligero— suele ser más efectivo que cualquier producto adicional. Cuidar flores no es una ciencia exacta ni una prueba de perfección. Es un diálogo cotidiano entre el espacio, el agua y lo vivo. Evitar estos errores no solo ayuda a que duren más; hace que el cuidado se sienta más natural, más ligero y parte de la rutina, no una obligación extra.</p>
+          <div class="blog-modal-cta">
+            <p>¿Quieres flores para acompañar tu espacio?</p>
+            <div class="blog-modal-cta-actions">
+              <a class="btn btn-primary" href="./circulo-blossom.html">Ver Círculo Blossom</a>
+              <a class="btn btn-ghost" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20flores%20para%20mi%20espacio" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="blog-modal" id="article-efimero" aria-labelledby="article-efimero-title">
+      <div class="blog-modal-inner">
+        <button class="blog-modal-close" type="button" data-article-close aria-label="Cerrar artículo">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="blog-modal-meta">
+          <span class="blog-tag">La calma cultivada</span>
+          <span class="blog-byline">Cristina Gómez · 23 ene 2026</span>
+        </div>
+        <h2 class="blog-modal-title" id="article-efimero-title">El valor de lo efímero</h2>
+        <figure class="blog-modal-figure">
+          <img src="images/WhatsApp-Image-2026-02-18-at-10.07.24-AM.jpeg" alt="Ramo de rosas en papel kraft con listón de marca Triplets" loading="lazy" />
+        </figure>
+        <div class="blog-modal-content">
+          <p class="blog-modal-lead">A mirar con más atención, a cuidar sin aferrarse, a agradecer lo que existe mientras existe.</p>
+          <p>Vivimos en una cultura que asocia bienestar con permanencia. Queremos que las cosas duren, que se mantengan estables, que no cambien demasiado. Buscamos relaciones sólidas, objetos resistentes, rutinas que no se alteren. En ese contexto, lo efímero suele verse como una falla: algo que no fue suficiente, que no logró quedarse. Sin embargo, en la naturaleza —y especialmente en las flores— la temporalidad no es un defecto, es una condición esencial de la vida. Cuando sabemos que algo no estará ahí para siempre, la mirada se vuelve más cuidadosa.</p>
+          <blockquote>Las flores no prometen durar. Su belleza ocurre en un intervalo breve y quizás por eso despiertan una atención distinta.</blockquote>
+          <p>Observamos los matices del color, la apertura exacta de los pétalos, la manera en que la luz cambia su presencia a lo largo del día. Lo efímero no distrae: convoca. Nos saca del modo automático y nos devuelve al momento presente sin esfuerzo consciente. Introduce una relación más amable con el tiempo. No todo tiene que conservarse intacto para haber sido valioso. Algunas experiencias cumplen su función precisamente porque terminan. En ese soltar aparece una calma distinta, una que no se sostiene en el control, sino en la confianza.</p>
+          <p>En la vida cotidiana, esta lógica suele olvidarse. Nos exigimos permanencia emocional, productividad constante, estados de ánimo estables. Pero la vida —como las flores— se mueve por ciclos. Hay momentos de expansión y otros de repliegue, etapas que florecen y otras que piden descanso. Reconocer lo efímero como parte natural del proceso puede aliviar la presión de tener que sostenerlo todo.</p>
+          <p>Las flores introducen una temporalidad más humana: nos recuerdan que el presente es suficiente, que no todo debe durar para ser significativo, que hay belleza incluso en lo que cambia.</p>
+          <div class="blog-modal-cta">
+            <p>¿Quieres flores para acompañar tu espacio?</p>
+            <div class="blog-modal-cta-actions">
+              <a class="btn btn-primary" href="./circulo-blossom.html">Ver Círculo Blossom</a>
+              <a class="btn btn-ghost" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20flores%20para%20mi%20espacio" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="blog-modal" id="article-tulipanes" aria-labelledby="article-tulipanes-title">
+      <div class="blog-modal-inner">
+        <button class="blog-modal-close" type="button" data-article-close aria-label="Cerrar artículo">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="blog-modal-meta">
+          <span class="blog-tag">Flores con historia</span>
+          <span class="blog-byline">Cristina Gómez · 23 ene 2026</span>
+        </div>
+        <h2 class="blog-modal-title" id="article-tulipanes-title">La vez que los tulipanes se convirtieron en dinero</h2>
+        <figure class="blog-modal-figure">
+          <img src="images/tulipanes.jpg.jpeg" alt="Campo de tulipanes de colores" loading="lazy" />
+        </figure>
+        <div class="blog-modal-content">
+          <p class="blog-modal-lead">¿Sabías que los tulipanes provocaron una de las primeras burbujas económicas de la historia?</p>
+          <p>Hoy los tulipanes se asocian con elegancia, sencillez y primavera. Aparecen en floreros minimalistas, arreglos contemporáneos y espacios que buscan luz y frescura.</p>
+          <p>Pero hubo un momento en la historia en el que un solo bulbo de tulipán llegó a valer más que una casa. Literalmente.</p>
+          <h3>Un origen inesperado</h3>
+          <p>Aunque hoy los tulipanes se identifican con los Países Bajos, no son originarios de Holanda. Su origen se remonta a Asia Central, especialmente a regiones que hoy forman parte de Turquía, Irán y Kazajistán. Allí crecían de forma silvestre y eran apreciados por su resistencia y color.</p>
+          <p>Fue en el siglo XVI cuando los tulipanes llegaron a Europa, primero como curiosidad botánica y después como símbolo de estatus.</p>
+          <h3>La tulipomanía: cuando una flor se volvió especulación</h3>
+          <p>En la Holanda del siglo XVII ocurrió algo inédito: los tulipanes, en especial ciertas variedades raras con vetas y colores inusuales, comenzaron a comprarse y venderse como activos financieros.</p>
+          <p>Algunos datos que sorprenden:</p>
+          <ul>
+            <li>Se firmaban contratos de compra de tulipanes que aún no habían florecido.</li>
+            <li>Un solo bulbo podía intercambiarse por ganado, muebles o propiedades.</li>
+            <li>Personas sin relación con la botánica empezaron a invertir solo para revender más caro.</li>
+          </ul>
+          <p>En 1637, el mercado colapsó. Los precios cayeron de un día para otro y muchos perdieron fortunas por una flor que, al final, seguía siendo una flor.</p>
+          <div class="blog-modal-cta">
+            <p>¿Quieres flores para acompañar tu espacio?</p>
+            <div class="blog-modal-cta-actions">
+              <a class="btn btn-primary" href="./circulo-blossom.html">Ver Círculo Blossom</a>
+              <a class="btn btn-ghost" href="https://wa.me/525532253448?text=Hola%20Triplets%2C%20quiero%20flores%20para%20mi%20espacio" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
 
     <section class="final-cta" aria-labelledby="cta-title">
       <div class="container final-cta-inner reveal">

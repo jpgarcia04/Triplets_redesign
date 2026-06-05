@@ -3159,12 +3159,14 @@ img {
 
 /* ---------- Blog / Sostenibilidad ---------- */
 
-.post-grid {
+/* ---------- Blog: listado de artículos ---------- */
+
+.blog-article-grid {
   display: grid;
-  gap: 20px;
+  gap: 22px;
 }
 
-.post-card {
+.blog-article-card {
   background: var(--color-cream);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-media);
@@ -3175,24 +3177,327 @@ img {
   transition: border-color 220ms var(--ease-out), box-shadow 220ms var(--ease-out), transform 220ms var(--ease-out);
 }
 
-/* Las cards del blog son informativas (sin artículo aún): sin lift en hover
-   para no sugerir que son clicables. */
-.post-card:hover {
-  border-color: var(--color-border);
+.blog-article-card:hover,
+.blog-article-card:focus-within {
+  border-color: rgba(75, 120, 120, 0.36);
+  box-shadow: var(--shadow-float);
+  transform: translateY(-4px);
 }
 
-.post-tag {
-  align-self: flex-start;
-  background: rgba(226, 223, 211, 0.5);
-  border: 1px solid var(--color-border);
+.blog-article-media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-article-media img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.1s var(--ease-out);
+  width: 100%;
+}
+
+.blog-article-card:hover .blog-article-media img {
+  transform: scale(1.05);
+}
+
+.blog-article-cat {
+  background: rgba(255, 254, 246, 0.92);
   border-radius: var(--radius-pill);
-  color: var(--color-text-muted);
+  color: var(--color-deep-teal);
   font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  margin-top: 4px;
-  padding: 6px 12px;
+  font-weight: 900;
+  left: 14px;
+  letter-spacing: 0.05em;
+  padding: 7px 13px;
+  position: absolute;
   text-transform: uppercase;
+  top: 14px;
+}
+
+.blog-article-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+}
+
+.blog-article-byline {
+  color: var(--color-deep-teal);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.blog-article-card h2 {
+  font-size: 1.32rem;
+  line-height: 1.25;
+}
+
+.blog-article-excerpt {
+  color: var(--color-text-muted);
+  flex: 1;
+}
+
+.blog-article-link {
+  align-items: center;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--color-deep-teal);
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 800;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 4px 0;
+}
+
+.blog-article-link span {
+  transition: transform 200ms var(--ease-out);
+}
+
+.blog-article-link:hover span {
+  transform: translateX(4px);
+}
+
+.blog-article-link:focus-visible {
+  border-radius: 6px;
+  outline: 2px solid var(--color-deep-teal);
+  outline-offset: 3px;
+}
+
+/* ---------- Blog: modal de artículo ---------- */
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.blog-modal {
+  background: var(--color-cream);
+  border: none;
+  border-radius: var(--radius-media);
+  box-shadow: var(--shadow-large);
+  color: var(--color-forest);
+  /* margin:auto re-centra el modal: el reset global `* { margin: 0 }` anula
+     el centrado por defecto que el navegador da a dialog:modal. */
+  margin: auto;
+  max-height: min(88vh, 780px);
+  max-width: 720px;
+  overflow: hidden;
+  padding: 0;
+  width: min(92vw, 720px);
+}
+
+.blog-modal::backdrop {
+  background: rgba(38, 63, 41, 0.5);
+}
+
+.blog-modal-inner {
+  display: flex;
+  flex-direction: column;
+  max-height: min(88vh, 780px);
+  overflow-y: auto;
+  padding: clamp(22px, 4vw, 40px);
+  position: relative;
+}
+
+.blog-modal-close {
+  align-items: center;
+  align-self: flex-end;
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-forest);
+  cursor: pointer;
+  display: inline-flex;
+  flex: none;
+  font-size: 1.6rem;
+  height: 44px;
+  justify-content: center;
+  line-height: 1;
+  position: sticky;
+  top: 0;
+  transition: background 200ms var(--ease-out), border-color 200ms var(--ease-out);
+  width: 44px;
+  z-index: 3;
+}
+
+.blog-modal-close:hover {
+  background: var(--color-pale-green);
+  border-color: var(--color-mint);
+}
+
+.blog-modal-close:focus-visible {
+  outline: 2px solid var(--color-deep-teal);
+  outline-offset: 2px;
+}
+
+.blog-modal-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin-top: -8px;
+}
+
+.blog-tag {
+  background: var(--color-pale-green);
+  border-radius: var(--radius-pill);
+  color: var(--color-forest);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  padding: 6px 13px;
+  text-transform: uppercase;
+}
+
+.blog-byline {
+  color: var(--color-deep-teal);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.blog-modal-title {
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  line-height: 1.16;
+  margin-top: 14px;
+}
+
+.blog-modal-figure {
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-card);
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.blog-modal-figure img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.blog-modal-content {
+  margin-top: 22px;
+}
+
+.blog-modal-content > * + * {
+  margin-top: 16px;
+}
+
+.blog-modal-content p {
+  color: rgba(38, 63, 41, 0.86);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.blog-modal-content .blog-modal-lead {
+  color: var(--color-deep-teal);
+  font-family: var(--font-title);
+  font-size: 1.16rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.blog-modal-content h3 {
+  font-size: 1.24rem;
+  margin-top: 26px;
+}
+
+.blog-modal-content ul {
+  color: rgba(38, 63, 41, 0.86);
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.blog-modal-content li {
+  line-height: 1.65;
+  padding-left: 22px;
+  position: relative;
+}
+
+.blog-modal-content li::before {
+  color: var(--color-mint);
+  content: "✿";
+  left: 0;
+  position: absolute;
+  top: 1px;
+}
+
+.blog-modal-content blockquote {
+  border-left: 3px solid var(--color-mint);
+  color: var(--color-forest);
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.5;
+  padding: 6px 0 6px 20px;
+}
+
+.blog-modal-cta {
+  background: rgba(189, 224, 199, 0.32);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  margin-top: 30px;
+  padding: 24px 22px;
+  text-align: center;
+}
+
+.blog-modal-cta p {
+  color: var(--color-forest);
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.blog-modal-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .blog-modal[open] {
+    animation: blogModalIn 280ms var(--ease-out);
+  }
+
+  .blog-modal[open]::backdrop {
+    animation: blogBackdropIn 280ms var(--ease-out);
+  }
+}
+
+@keyframes blogModalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes blogBackdropIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .blog-modal {
+    border-radius: 0;
+    height: 100dvh;
+    margin: 0;
+    max-height: 100dvh;
+    max-width: 100vw;
+    width: 100vw;
+  }
+
+  .blog-modal-inner {
+    max-height: 100dvh;
+  }
 }
 
 .form-fallback {
@@ -3211,88 +3516,99 @@ img {
   text-decoration: underline;
 }
 
-.post-cover {
-  align-items: flex-end;
-  aspect-ratio: 16 / 10;
-  display: flex;
-  overflow: hidden;
-  padding: 16px;
-  position: relative;
+/* ---------- Sostenibilidad: tres dimensiones ---------- */
+
+.sustainability-watermark {
+  right: -40px;
+  top: 30px;
+  width: min(44vw, 480px);
 }
 
-.post-cover-1 { background: linear-gradient(140deg, var(--color-pale-green), var(--color-mint)); }
-.post-cover-2 { background: linear-gradient(140deg, var(--color-sand), var(--color-stone)); }
-.post-cover-3 { background: linear-gradient(140deg, var(--color-deep-teal), var(--color-forest)); }
-
-.post-cover span {
-  background: rgba(255, 254, 246, 0.92);
-  border-radius: var(--radius-pill);
-  color: var(--color-forest);
-  font-size: 0.74rem;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-  padding: 7px 12px;
-  position: relative;
-  text-transform: uppercase;
-  z-index: 1;
-}
-
-.post-cover::after {
-  background: url("../images/flor-movil.png") no-repeat center / contain;
-  content: "";
-  height: 120px;
-  opacity: 0.4;
-  position: absolute;
-  right: -10px;
-  top: -10px;
-  width: 120px;
-}
-
-.post-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 12px;
-  padding: 22px;
-}
-
-.post-body p {
-  color: var(--color-text-muted);
-  flex: 1;
-}
-
-.value-grid {
+.sustainability-grid {
   display: grid;
-  gap: 18px;
+  gap: 22px;
 }
 
-.value-card {
-  background: rgba(255, 254, 246, 0.84);
+.sustainability-card {
+  background: rgba(255, 254, 246, 0.9);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-media);
   box-shadow: var(--shadow-small);
-  display: grid;
-  gap: 12px;
-  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px 28px 30px;
+  position: relative;
   transition: border-color 220ms var(--ease-out), box-shadow 220ms var(--ease-out), transform 220ms var(--ease-out);
 }
 
-.value-card:hover {
+.sustainability-card::before {
+  background: linear-gradient(90deg, var(--color-mint), var(--color-pale-green));
+  border-radius: var(--radius-media) var(--radius-media) 0 0;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.sustainability-card:hover {
   border-color: rgba(75, 120, 120, 0.36);
   box-shadow: var(--shadow-float);
   transform: translateY(-4px);
 }
 
-.value-icon {
+.sustainability-card-head {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sustainability-card-icon {
   align-items: center;
   background: var(--color-pale-green);
   border-radius: 50%;
   color: var(--color-forest);
   display: inline-flex;
-  font-size: 1.4rem;
-  height: 54px;
+  height: 52px;
   justify-content: center;
-  width: 54px;
+  width: 52px;
+}
+
+.sustainability-card-index {
+  color: rgba(75, 120, 120, 0.38);
+  font-family: var(--font-title);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sustainability-card h3 {
+  font-size: 1.34rem;
+}
+
+.sustainability-list {
+  color: var(--color-text-muted);
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+
+.sustainability-list li {
+  line-height: 1.6;
+  padding-left: 24px;
+  position: relative;
+}
+
+.sustainability-list li::before {
+  color: var(--color-mint);
+  content: "✿";
+  font-size: 0.9rem;
+  left: 0;
+  position: absolute;
+  top: 2px;
 }
 
 /* ---------- Footer: refinamiento premium ---------- */
@@ -3606,7 +3922,7 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .post-grid {
+  .blog-article-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -3644,11 +3960,11 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .value-grid {
+  .sustainability-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .post-grid {
+  .blog-article-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
