@@ -80,8 +80,12 @@ $iac = [string][char]0x00ED
 $secText = "C{0}rculo Blossom {1} Blossom Bar {1} Atelier en Bosque Real" -f $iac, $dot
 $g.DrawString($secText, $fontSec, $brushTeal, $secRect, $sf)
 
-# Guardar
-$out = Join-Path $root 'images\og-triplets.png'
-$bmp.Save($out, [System.Drawing.Imaging.ImageFormat]::Png)
+# Guardar como JPEG ligero (mejor para previews de WhatsApp/redes que un PNG pesado)
+$jpgOut = Join-Path $root 'images\og-triplets.jpg'
+$jpgCodec = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.MimeType -eq 'image/jpeg' }
+$encParams = New-Object System.Drawing.Imaging.EncoderParameters(1)
+$encParams.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter([System.Drawing.Imaging.Encoder]::Quality, [long]90)
+$bmp.Save($jpgOut, $jpgCodec, $encParams)
 $g.Dispose(); $bmp.Dispose(); $img.Dispose()
-Write-Output "Saved $out ($W x $H)"
+$kb = [math]::Round((Get-Item $jpgOut).Length / 1KB)
+Write-Output "Saved $jpgOut ($W x $H, $kb KB)"
