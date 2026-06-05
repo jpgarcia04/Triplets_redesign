@@ -3175,10 +3175,40 @@ img {
   transition: border-color 220ms var(--ease-out), box-shadow 220ms var(--ease-out), transform 220ms var(--ease-out);
 }
 
+/* Las cards del blog son informativas (sin artículo aún): sin lift en hover
+   para no sugerir que son clicables. */
 .post-card:hover {
-  border-color: rgba(75, 120, 120, 0.4);
-  box-shadow: var(--shadow-float);
-  transform: translateY(-5px);
+  border-color: var(--color-border);
+}
+
+.post-tag {
+  align-self: flex-start;
+  background: rgba(226, 223, 211, 0.5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+
+.form-fallback {
+  background: rgba(189, 224, 199, 0.35);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  color: var(--color-forest);
+  font-weight: 700;
+  margin-top: 14px;
+  padding: 14px 16px;
+}
+
+.form-fallback a {
+  color: var(--color-deep-teal);
+  font-weight: 900;
+  text-decoration: underline;
 }
 
 .post-cover {

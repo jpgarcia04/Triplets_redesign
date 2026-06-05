@@ -335,7 +335,21 @@ if (contactForm) {
       data.mensaje,
     ].join("\n");
 
-    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`, "_blank", "noopener");
+    const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+    const fallback = document.querySelector("#contactFallback");
+    const fallbackLink = document.querySelector("#contactFallbackLink");
+    if (fallbackLink) fallbackLink.href = waUrl;
+
+    // Abrimos WhatsApp en una pestaña nueva. Si el navegador bloquea el popup
+    // (window.open devuelve null), mostramos un enlace visible como respaldo.
+    const waWindow = window.open(waUrl, "_blank");
+    if (waWindow) {
+      try { waWindow.opener = null; } catch (err) {}
+      if (fallback) fallback.hidden = true;
+    } else if (fallback) {
+      fallback.hidden = false;
+      fallback.scrollIntoView({ block: "nearest" });
+    }
   });
 }
 
