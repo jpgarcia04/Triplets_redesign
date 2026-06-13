@@ -1,0 +1,388 @@
+/* ===================================================================
+   TRIPLETS ATELIER — V2 PREMIUM VISUAL LAYER
+   Capa de refinamiento visual de alto impacto.
+   Se carga DESPUÉS de css/styles.css en todas las páginas.
+   Regla: no redefine el layout original — solo extiende clases
+   existentes (sombras, transiciones, texturas) y agrega nuevas.
+   Sin dependencias externas: todo SVG va inline como data URI.
+   =================================================================== */
+
+:root {
+  --ease-premium: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow-duo:
+    0 1px 2px rgba(38, 63, 41, 0.07),
+    0 16px 40px rgba(38, 63, 41, 0.09);
+  --shadow-duo-lift:
+    0 2px 5px rgba(38, 63, 41, 0.1),
+    0 30px 70px rgba(38, 63, 41, 0.16);
+  /* Trama de puntos finos, apenas perceptible (forest al 5.5%) */
+  --texture-dots: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ccircle cx='2' cy='2' r='1.1' fill='%23263f29' fill-opacity='0.055'/%3E%3C/svg%3E");
+  /* Separador de headings: línea fina + rombo (deep teal) */
+  --divider-teal: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='9' fill='none'%3E%3Cpath d='M0 4.5h31' stroke='%234b7878' stroke-opacity='0.45'/%3E%3Cpath d='M42 0.9 45.6 4.5 42 8.1 38.4 4.5Z' fill='%234b7878' fill-opacity='0.5'/%3E%3Cpath d='M53 4.5h31' stroke='%234b7878' stroke-opacity='0.45'/%3E%3C/svg%3E");
+  /* Versión crema para fondos oscuros */
+  --divider-cream: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='9' fill='none'%3E%3Cpath d='M0 4.5h31' stroke='%23fffef6' stroke-opacity='0.55'/%3E%3Cpath d='M42 0.9 45.6 4.5 42 8.1 38.4 4.5Z' fill='%23fffef6' fill-opacity='0.6'/%3E%3Cpath d='M53 4.5h31' stroke='%23fffef6' stroke-opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* ---------- Tipografía de alto nivel ---------- */
+
+h1,
+h2,
+h3 {
+  font-feature-settings: "liga" 1, "kern" 1, "onum" 1;
+  font-kerning: normal;
+  text-wrap: balance;
+}
+
+h1 {
+  letter-spacing: -0.012em;
+}
+
+h2 {
+  letter-spacing: -0.008em;
+}
+
+.hero-text,
+.cta-sub,
+.section-heading p:not(.eyebrow) {
+  text-wrap: balance;
+}
+
+/* Tracking refinado en kickers/eyebrows en mayúsculas */
+.eyebrow,
+.service-kicker,
+.contact-choice-kicker,
+.plan-freq-label,
+.product-category,
+.hero-note span,
+.media-floating-card span,
+.brand-copy span {
+  letter-spacing: 0.1em;
+}
+
+/* Números antiguos en precios (estilo editorial) */
+.price,
+.plan-price strong,
+.product-price strong {
+  font-variant-numeric: oldstyle-nums;
+}
+
+/* ---------- Separador ornamental bajo headings de sección ---------- */
+
+.section-heading h1::after,
+.section-heading h2::after {
+  background: var(--divider-teal) no-repeat center / contain;
+  content: "";
+  display: block;
+  height: 9px;
+  margin-top: 18px;
+  width: 84px;
+}
+
+/* Headings centrados (intro del home, blog, sostenibilidad, fundadoras) */
+.intro-section .section-heading h2::after,
+.section-heading[style*="text-align:center"] h1::after,
+.section-heading[style*="text-align:center"] h2::after {
+  margin-inline: auto;
+}
+
+.final-cta h2::after {
+  background: var(--divider-cream) no-repeat center / contain;
+  content: "";
+  display: block;
+  height: 9px;
+  margin-inline: auto;
+  margin-top: 20px;
+  width: 84px;
+}
+
+/* ---------- Texturas y fondos con profundidad ---------- */
+
+/* Trama de puntos finos en las bandas tonales */
+.how-it-works,
+.trust-block,
+.plans-section,
+.pricing-section,
+.locale-band,
+.gallery-section,
+.story-section,
+.contact-options,
+.experiences {
+  isolation: isolate;
+  position: relative;
+}
+
+.how-it-works::before,
+.trust-block::before,
+.plans-section::before,
+.pricing-section::before,
+.locale-band::before,
+.gallery-section::before,
+.story-section::before,
+.contact-options::before,
+.experiences::before {
+  background-image: var(--texture-dots);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+/* CTA final: gradiente multicapa + trama diagonal muy suave */
+.final-cta {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.final-cta::before {
+  background:
+    radial-gradient(circle at 86% 92%, rgba(189, 224, 199, 0.12), transparent 26rem),
+    radial-gradient(circle at 4% 80%, rgba(97, 182, 176, 0.1), transparent 18rem),
+    repeating-linear-gradient(135deg, rgba(255, 254, 246, 0.035) 0 1px, transparent 1px 16px);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+}
+
+/* ---------- Navbar: glass premium ---------- */
+
+.site-header {
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  backdrop-filter: blur(18px) saturate(1.6);
+  transition: background 400ms var(--ease-premium), box-shadow 400ms var(--ease-premium);
+}
+
+.site-header.is-scrolled {
+  background: rgba(255, 254, 246, 0.8);
+}
+
+/* ---------- Botones: transición premium + sombra en dos capas ---------- */
+
+.btn {
+  letter-spacing: 0.015em;
+  transition:
+    background 400ms var(--ease-premium),
+    border-color 400ms var(--ease-premium),
+    color 400ms var(--ease-premium),
+    transform 400ms var(--ease-premium),
+    box-shadow 400ms var(--ease-premium);
+}
+
+.btn-primary {
+  box-shadow:
+    0 1px 2px rgba(38, 63, 41, 0.16),
+    0 10px 26px rgba(75, 120, 120, 0.26);
+}
+
+.btn-primary:hover {
+  box-shadow:
+    0 2px 4px rgba(38, 63, 41, 0.18),
+    0 16px 36px rgba(38, 63, 41, 0.28);
+}
+
+.btn-light {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.12),
+    0 10px 26px rgba(0, 0, 0, 0.18);
+}
+
+.nav-cta {
+  letter-spacing: 0.015em;
+}
+
+/* ---------- Cards: sombras en dos capas + easing premium ---------- */
+
+.path-card,
+.plan-card,
+.service-card,
+.pricing-card,
+.service-detail-card,
+.owner-card,
+.experience-flow article,
+.contact-choice-card,
+.blog-article-card,
+.sustainability-card,
+.process-step,
+.option-card,
+.content-panel,
+.location-card {
+  box-shadow: var(--shadow-duo);
+  transition:
+    border-color 400ms var(--ease-premium),
+    box-shadow 400ms var(--ease-premium),
+    transform 400ms var(--ease-premium);
+}
+
+.path-card:hover,
+.plan-card:hover,
+.service-card:hover,
+.pricing-card:hover,
+.service-detail-card:hover,
+.owner-card:hover,
+.experience-flow article:hover,
+.contact-choice-card:hover,
+.blog-article-card:hover,
+.blog-article-card:focus-within,
+.sustainability-card:hover {
+  box-shadow: var(--shadow-duo-lift);
+}
+
+/* Imágenes de galería: definición sutil donde no la tenían */
+.gallery-mosaic figure,
+.home-gallery figure {
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-duo);
+}
+
+/* ---------- Footer editorial ---------- */
+
+.site-footer {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(97, 182, 176, 0.14), transparent 30rem),
+    radial-gradient(circle at 92% 100%, rgba(189, 224, 199, 0.08), transparent 26rem),
+    var(--color-forest);
+  padding: 64px 0 26px;
+}
+
+.footer-column h3 {
+  border-bottom: 1px solid rgba(255, 254, 246, 0.14);
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+}
+
+/* Ornamento floral centrado arriba del copyright */
+.footer-ornament {
+  display: flex;
+  justify-content: center;
+  margin-top: 46px;
+}
+
+.footer-ornament svg {
+  display: block;
+  height: 24px;
+  width: min(260px, 64vw);
+}
+
+.footer-ornament + .footer-bottom {
+  border-top: 0;
+  margin-top: 14px;
+  padding-top: 0;
+}
+
+/* ---------- Ornamento floral de los heros ---------- */
+
+.home-hero,
+.page-hero {
+  position: relative;
+}
+
+.page-hero {
+  overflow: hidden;
+}
+
+.page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.orn-hero {
+  bottom: -28px;
+  height: auto;
+  left: -24px;
+  pointer-events: none;
+  position: absolute;
+  user-select: none;
+  width: clamp(120px, 19vw, 210px);
+  z-index: 0;
+}
+
+/* ---------- Animaciones elegantes (solo si el usuario las acepta) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .orn-hero {
+    animation: ornSway 11s ease-in-out infinite alternate;
+    transform-origin: 20% 100%;
+  }
+
+  .hero-floating {
+    animation: heroFloat 9s ease-in-out infinite;
+  }
+}
+
+@keyframes ornSway {
+  from { transform: rotate(-1.2deg); }
+  to { transform: rotate(1.6deg); }
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orn-hero,
+  .hero-floating {
+    animation: none !important;
+  }
+}
+
+/* ---------- Formularios: micro-detalles ---------- */
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  box-shadow: inset 0 1px 3px rgba(38, 63, 41, 0.05);
+  transition:
+    border-color 300ms var(--ease-premium),
+    box-shadow 300ms var(--ease-premium),
+    background 300ms var(--ease-premium);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--color-forest);
+  opacity: 0.34;
+}
+
+/* ---------- Scrollbar refinada ---------- */
+
+html {
+  scrollbar-color: rgba(75, 120, 120, 0.65) var(--color-cream);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(75, 120, 120, 0.55);
+  border: 2px solid var(--color-cream);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-deep-teal);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .orn-hero {
+    bottom: -20px;
+    left: -16px;
+    width: 110px;
+  }
+
+  .footer-ornament {
+    margin-top: 36px;
+  }
+}
