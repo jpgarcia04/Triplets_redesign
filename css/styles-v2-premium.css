@@ -386,3 +386,202 @@ html {
     margin-top: 36px;
   }
 }
+
+/* ===================================================================
+   WATERMARKS FLORALES — identidad en todo el sitio
+   Reutiliza el mismo f1.png que ya distingue a Sostenibilidad,
+   colocado en esquinas con opacidad baja para que se lea como
+   textura elegante, nunca como ruido. Como apunta a clases de
+   sección compartidas, aparece en TODAS las páginas a la vez.
+   =================================================================== */
+
+.how-it-works,
+.trust-block,
+.plans-section,
+.pricing-section,
+.locale-band,
+.gallery-section,
+.story-section,
+.contact-options,
+.experiences,
+.founders-section {
+  overflow: clip;
+}
+
+/* Floral en la esquina superior derecha */
+.story-section::after,
+.plans-section::after,
+.pricing-section::after,
+.gallery-section::after,
+.contact-options::after {
+  background: url("../images/f1.png") no-repeat top right / contain;
+  content: "";
+  height: min(40vw, 360px);
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  right: -28px;
+  top: -16px;
+  width: min(44vw, 420px);
+  z-index: -1;
+}
+
+/* Floral en la esquina inferior izquierda (espejo) */
+.how-it-works::after,
+.trust-block::after,
+.locale-band::after,
+.experiences::after,
+.founders-section::after {
+  background: url("../images/f1.png") no-repeat bottom left / contain;
+  bottom: -16px;
+  content: "";
+  height: min(40vw, 360px);
+  left: -28px;
+  opacity: 0.5;
+  pointer-events: none;
+  position: absolute;
+  transform: scaleX(-1);
+  width: min(44vw, 420px);
+  z-index: -1;
+}
+
+/* Watermark floral en el encabezado de cada página (heros) */
+.home-hero::after,
+.page-hero::after {
+  background: url("../images/f1.png") no-repeat top right / contain;
+  content: "";
+  height: min(48vw, 440px);
+  opacity: 0.45;
+  pointer-events: none;
+  position: absolute;
+  right: -24px;
+  top: -10px;
+  width: min(50vw, 480px);
+  z-index: 0;
+}
+
+/* Toque floral suave también en el cierre (CTA oscuro) de cada página */
+.final-cta {
+  position: relative;
+}
+
+.final-cta::after {
+  background: url("../images/f1.png") no-repeat bottom right / contain;
+  bottom: -10px;
+  content: "";
+  height: min(34vw, 300px);
+  opacity: 0.08;
+  pointer-events: none;
+  position: absolute;
+  right: -10px;
+  width: min(38vw, 340px);
+  z-index: 0;
+}
+
+.final-cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .story-section::after,
+  .plans-section::after,
+  .pricing-section::after,
+  .gallery-section::after,
+  .contact-options::after,
+  .how-it-works::after,
+  .trust-block::after,
+  .locale-band::after,
+  .experiences::after,
+  .founders-section::after {
+    height: 230px;
+    opacity: 0.4;
+    width: 260px;
+  }
+
+  .home-hero::after,
+  .page-hero::after {
+    opacity: 0.38;
+    width: 280px;
+    height: 260px;
+  }
+}
+
+/* ===================================================================
+   BOTÓN FLOTANTE DE WHATSAPP — visible en todas las páginas
+   =================================================================== */
+
+.wa-fab {
+  align-items: center;
+  background: #25d366;
+  border-radius: 50%;
+  bottom: clamp(16px, 4vw, 28px);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.2),
+    0 10px 26px rgba(37, 211, 102, 0.42);
+  color: #fff;
+  display: inline-flex;
+  height: 60px;
+  justify-content: center;
+  position: fixed;
+  right: clamp(16px, 4vw, 28px);
+  transition:
+    transform 300ms var(--ease-premium),
+    box-shadow 300ms var(--ease-premium);
+  width: 60px;
+  z-index: 70;
+}
+
+.wa-fab::before {
+  border: 2px solid rgba(37, 211, 102, 0.55);
+  border-radius: 50%;
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.wa-fab svg {
+  height: 32px;
+  position: relative;
+  width: 32px;
+}
+
+.wa-fab:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.24),
+    0 16px 34px rgba(37, 211, 102, 0.5);
+}
+
+.wa-fab:focus-visible {
+  outline: 3px solid rgba(38, 63, 41, 0.6);
+  outline-offset: 3px;
+}
+
+/* Se aparta cuando el menú móvil o un modal del blog están abiertos */
+body.nav-open .wa-fab,
+body.modal-open .wa-fab {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .wa-fab::before {
+    animation: waPulse 2.6s var(--ease-premium) infinite;
+  }
+}
+
+@keyframes waPulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  70% { opacity: 0; transform: scale(1.45); }
+  100% { opacity: 0; transform: scale(1.45); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab,
+  .wa-fab::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
